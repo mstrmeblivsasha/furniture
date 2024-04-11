@@ -19,9 +19,9 @@ html {
 
 body {
     min-height: 100vh;
-    color: $gray0;
-    background-color: $backgroundColor;
-    font-family: var(--font-saira);
+    // color: $gray0;
+    // background-color: $backgroundColor;
+    // font-family: var(--font-saira);
 }
 
 header,
@@ -69,12 +69,12 @@ article {
 
 *::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: linear-gradient(
-        to top,
-        $gradientYellow,
-        $gradientCyan,
-        $gradientBlue
-    );
+    // background: linear-gradient(
+    //     to top,
+    //     $gradientYellow,
+    //     $gradientCyan,
+    //     $gradientBlue
+    // );
     height: 2.5px;
 }
 
@@ -122,41 +122,41 @@ button {
     margin-right: auto;
 }
 
-.titleGradient {
-    background-image: linear-gradient(
-        to right,
-        $gradientYellow,
-        $gradientCyan,
-        $gradientBlue
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
+// .titleGradient {
+//     background-image: linear-gradient(
+//         to right,
+//         $gradientYellow,
+//         $gradientCyan,
+//         $gradientBlue
+//     );
+//     background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     -webkit-background-clip: text;
+// }
 
-.navLinkHover {
-    position: relative;
-    &::after {
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        background-image: $gradient;
-        bottom: 0;
-        left: 0;
-    }
-    &:hover,
-    &:focus {
-        &::after {
-            animation: animate 0.5s linear forwards;
-        }
-    }
-}
-@keyframes animate {
-    to {
-        width: 100%;
-    }
-}
+// .navLinkHover {
+//     position: relative;
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         width: 0%;
+//         height: 2px;
+//         background-image: $gradient;
+//         bottom: 0;
+//         left: 0;
+//     }
+//     &:hover,
+//     &:focus {
+//         &::after {
+//             animation: animate 0.5s linear forwards;
+//         }
+//     }
+// }
+// @keyframes animate {
+//     to {
+//         width: 100%;
+//     }
+// }
 
 .active {
     &::after {

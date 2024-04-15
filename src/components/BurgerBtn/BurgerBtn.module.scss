@@ -1,0 +1,19 @@
+@import "../../app/variables";
+
+.burgerBtn {
+  width: fit-content;
+  height: fit-content;
+  outline: none;
+  background: none;
+  border: none;
+
+  & svg {
+    width: 32px;
+    height: 32px;
+    stroke: $Gray900;
+  }
+
+  @media screen and (min-width: $laptop) {
+    display: none;
+  }
+}

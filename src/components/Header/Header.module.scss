@@ -1,0 +1,16 @@
+@import "../../app/variables";
+
+.header {
+  height: 70px;
+  background-color: $Gray0;
+  padding: 16px 20px;
+}
+.container {
+  position: relative;
+}
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

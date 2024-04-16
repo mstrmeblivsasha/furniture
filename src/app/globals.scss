@@ -94,7 +94,7 @@ section {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    height: 50vh;
+    // height: 50vh;
     @media screen and (min-width: $tablet) {
         // background-color: red;
     }
@@ -131,7 +131,4 @@ button {
     &::after {
         width: 100%;
     }
-}
-
-h2 {
 }

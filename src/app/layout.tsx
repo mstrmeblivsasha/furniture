@@ -8,8 +8,8 @@ import "./globals.scss";
 const raleway = Raleway({ subsets: ["cyrillic"], weight: ["400"] });
 
 export const metadata: Metadata = {
-    title: "Майстер меблів",
-    description: "Майстер меблів. Новомосковськ, Дніпро",
+    title: "МайстерМеблів",
+    description: "МайстерМеблів. Новомосковськ, Дніпро",
 };
 
 export default function RootLayout({

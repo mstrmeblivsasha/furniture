@@ -6,12 +6,15 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "commonjs",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+
+    "target": "es5",
+
     "plugins": [
       {
         "name": "next"
@@ -26,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/BurgerBtn/BurgerBtn.tsx"
+    "src/components/BurgerBtn/BurgerBtn.tsx",
+    "src/context/SiteContext.tsx"
   ],
   "exclude": ["node_modules"]
 }

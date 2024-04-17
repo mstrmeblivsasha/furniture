@@ -1,4 +1,5 @@
 @import "./_variables";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100..900&family=Raleway:wght@100..900&display=swap");
 
 *,
 *::before,
@@ -19,6 +20,7 @@ html {
 
 body {
   min-height: 100vh;
+  font-family: Raleway;
 }
 
 header,
@@ -133,5 +135,5 @@ button {
   }
 }
 
-h2 {
-}
+// h2 {
+// }

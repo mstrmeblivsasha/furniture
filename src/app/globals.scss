@@ -1,5 +1,4 @@
 @import "./_variables";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100..900&family=Raleway:wght@100..900&display=swap");
 
 *,
 *::before,
@@ -20,7 +19,6 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: Raleway;
 }
 
 header,
@@ -96,9 +94,9 @@ section {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  height: 50vh;
+  // height: 50vh;
   @media screen and (min-width: $tablet) {
-    background-color: red;
+    // background-color: red;
   }
 }
 
@@ -134,6 +132,3 @@ button {
     width: 100%;
   }
 }
-
-// h2 {
-// }

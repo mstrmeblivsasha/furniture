@@ -22,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className={raleway.className}>
-        {/* <body> */}
         <SiteProvider>
           <Header />
           <main>{children}</main>

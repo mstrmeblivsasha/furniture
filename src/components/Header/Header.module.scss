@@ -4,6 +4,8 @@
   height: 70px;
   background-color: $Gray0;
   padding: 16px 20px;
+  position: fixed;
+  z-index: 100;
 }
 .container {
   position: relative;
@@ -13,4 +15,20 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.mobileLinks {
+  position: absolute;
+  flex-direction: column;
+  gap: 40px;
+  top: 54px;
+  padding: 20px;
+  background-color: $Gray0;
+  overflow: hidden;
+  width: 176px;
+  // box-shadow: 8px 8px 40px rgba(59, 48, 48, 0.33);
+}
+.mobileLinksHidden {
+  padding: 0px 20px;
+  height: 0px;
 }

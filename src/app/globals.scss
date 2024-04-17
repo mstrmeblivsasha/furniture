@@ -19,6 +19,10 @@ html {
 
 body {
   min-height: 100vh;
+  color: $Gray900;
+}
+.bluredBody {
+  filter: blur(2px);
 }
 
 header,

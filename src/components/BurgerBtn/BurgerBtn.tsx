@@ -1,12 +1,36 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./BurgerBtn.module.scss";
 import { SiteContext } from "@/context/SiteContext";
+// import { useWindowResize } from "@/hooks/windowResize";
 
 const BurgerBtn = () => {
   const { isMobileMenu, setIsMobileMenu } = useContext(SiteContext);
-  // console.log("isMobileMenu", isMobileMenu);
+  // const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
+
+  useEffect(() => {
+    const handleBodyClass = () => {
+      const mainEl = document.querySelector("main");
+      if (mainEl) {
+        if (isMobileMenu) {
+          mainEl.classList.add("bluredBody");
+        } else {
+          mainEl.classList.remove("bluredBody");
+        }
+      }
+    };
+
+    handleBodyClass();
+
+    return () => {
+      // Видалення обробника подій при видаленні компонента
+      const mainEl = document.querySelector("main");
+      if (mainEl) {
+        mainEl.classList.remove("bluredBody");
+      }
+    };
+  }, [isMobileMenu]);
 
   return (
     <button

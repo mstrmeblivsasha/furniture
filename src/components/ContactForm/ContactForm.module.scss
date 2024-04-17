@@ -1,47 +1,71 @@
 @import "../../app/variables";
 
 .form {
-    width: 283px;
-    // @media screen and ($tablet) {
-    //     max-width: 320px;
-    // }
-    // @media screen and ($laptop) {
-    //     max-width: 466px;
-    // }
-
-    // @media screen and ($tablet) {
-    //     flex: 1;
-    // }
+    width: 280px;
+    @media screen and (min-width: $tablet) {
+        width: 656px;
+        padding: 48px 34px;
+    }
+    @media screen and (min-width: $laptop) {
+        padding: 64px 24px 24px 24px;
+    }
 }
 
-.inputWrap {
+.inputsWrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-bottom: 16px;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 20px;
+    }
+    @media screen and (min-width: $laptop) {
+        margin-bottom: 32px;
+    }
+}
+
+.innerBox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    @media screen and (min-width: $tablet) {
+        width: 588px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.errorWrap {
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
+    @media screen and (min-width: $tablet) {
+        width: 282px;
+    }
+}
+
+.textareaWrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .label {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.6;
-    color: rgba(19, 19, 19, 1);
-    // margin-bottom: 10px;
-    // @media screen and ($tablet) {
-    //     // font-size: 16px;
-    // }
-    // @media screen and ($laptop) {
-    //     // font-size: 20px;
-    // }
+    color: $Gray900;
 }
 
 .input {
     width: 100%;
+    height: 58px;
     background-color: transparent;
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(59, 48, 48, 1);
+    border-bottom: 1px solid $Primary900;
     border-radius: 0px;
     padding-bottom: 5px;
     font-weight: 300;
@@ -49,61 +73,68 @@
     line-height: 1.6;
 }
 
-.input:focus-visible {
-    border-bottom: 1px solid #d8d401;
+.textarea {
+    resize: none;
+    height: 100px;
 }
 
 .input::placeholder {
     font-weight: 300;
     font-size: 16px;
     line-height: 1.6;
-    color: rgba(94, 94, 97, 1);
-    // @media screen and ($tablet) {
-    //     font-size: 16px;
-    // }
+    color: $Gray600;
+    @media screen and (min-width: $laptop) {
+        font-size: 20px;
+    }
+}
+
+.textarea::placeholder {
+    font-size: 18px;
 }
 
 .btn {
-    width: 100%;
-    height: 32px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    background-color: rgba(59, 48, 48, 1);
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
-    border-radius: 30px;
+    border-radius: 16px;
+    width: 100%;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $Primary900;
+    color: $Gray0;
+    margin-bottom: 24px;
 
-    // &:hover,
-    // &:focus {
-    //     animation: btnBg 0.3s linear forwards;
-    //     scale: 0.98;
-    //     text-shadow: 0px 0px 4px $darkFontColor;
-    // }
+    @media screen and (min-width: $tablet) {
+        width: 432px;
+        margin-bottom: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media screen and (min-width: $laptop) {
+        width: 384px;
+        height: 48px;
+    }
 
-    // @media screen and ($tablet) {
-    //     height: 45px;
-    //     font-size: 14px;
-    // }
-    // @media screen and ($laptop) {
-    //     height: 45px;
-    //     font-size: 20px;
-    // }
+    &:hover,
+    &:focus {
+        scale: 1.02;
+    }
 }
 
 .error {
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 0;
     color: rgb(238, 31, 31);
-    // font-family: var(--font-work-sans);
     font-size: 13px;
     font-weight: 600;
-    // @media screen and (min-width: $laptop) {
-    //     top: 60px;
-    //     font-size: 14px;
-    // }
+    @media screen and (min-width: $laptop) {
+        font-size: 14px;
+    }
+}
+
+.errorColor {
+    border-bottom: 1px solid rgb(238, 31, 31);
 }

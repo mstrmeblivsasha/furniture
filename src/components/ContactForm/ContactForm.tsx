@@ -26,7 +26,7 @@ const ContactForm = () => {
     }, [isSubmitSuccessful, reset]);
 
     const onSubmit: SubmitHandler<TypeContactsSchema> = (data) => {
-        console.log("data:", data);
+        console.log("submitData:", data);
     };
 
     return (
@@ -35,50 +35,71 @@ const ContactForm = () => {
             className={styles.form}
             noValidate
         >
-            <div className={styles.inputWrap}>
-                <label htmlFor='userName' className={styles.label}>
-                    Ім’я
-                </label>
+            <div className={styles.inputsWrap}>
+                <div className={styles.innerBox}>
+                    <div className={styles.errorWrap}>
+                        <label htmlFor='userName' className={styles.label}>
+                            Ім’я
+                        </label>
 
-                <input
-                    type='text'
-                    id='userName'
-                    maxLength={40}
-                    {...register("userName")}
-                    placeholder='Ваше Ім’я'
-                    className={styles.input}
-                />
-                <p className={styles.error}>{errors.userName?.message}</p>
-            </div>
-            <div className={styles.inputWrap}>
-                <label htmlFor='phone' className={styles.label}>
-                    Телефон
-                </label>
+                        <input
+                            type='text'
+                            id='userName'
+                            maxLength={40}
+                            {...register("userName")}
+                            placeholder='Ваше Ім’я'
+                            className={
+                                errors.userName
+                                    ? `${styles.input} ${styles.errorColor}`
+                                    : styles.input
+                            }
+                        />
+                        <p className={styles.error}>
+                            {errors.userName?.message}
+                        </p>
+                    </div>
+                    <div className={styles.errorWrap}>
+                        <label htmlFor='phone' className={styles.label}>
+                            Телефон
+                        </label>
 
-                <input
-                    type='text'
-                    id='phone'
-                    maxLength={13}
-                    {...register("phone")}
-                    placeholder='+ 380_________'
-                    className={styles.input}
-                />
-                <p className={styles.error}>{errors.phone?.message}</p>
-            </div>
-            <div className={styles.inputWrap}>
-                <label htmlFor='message' className={styles.label}>
-                    Повідомлення
-                </label>
+                        <input
+                            type='text'
+                            id='phone'
+                            maxLength={13}
+                            {...register("phone")}
+                            placeholder='+ 380_________'
+                            className={
+                                errors.phone
+                                    ? `${styles.input} ${styles.errorColor}`
+                                    : styles.input
+                            }
+                        />
+                        <p className={styles.error}>{errors.phone?.message}</p>
+                    </div>
+                </div>
+                <div className={styles.innerBox}>
+                    <div className={styles.textareaWrap}>
+                        <label htmlFor='message' className={styles.label}>
+                            Повідомлення
+                        </label>
 
-                <input
-                    type='text'
-                    id='message'
-                    maxLength={240}
-                    {...register("message")}
-                    placeholder='Ваше замовлення'
-                    className={styles.input}
-                />
-                <p className={styles.error}>{errors.message?.message}</p>
+                        <textarea
+                            id='message'
+                            maxLength={240}
+                            {...register("message")}
+                            placeholder='Ваше замовлення'
+                            className={
+                                errors.message
+                                    ? `${styles.input} ${styles.textarea} ${styles.errorColor}`
+                                    : `${styles.input} ${styles.textarea}`
+                            }
+                        />
+                        <p className={styles.error}>
+                            {errors.message?.message}
+                        </p>
+                    </div>
+                </div>
             </div>
             <button
                 type='submit'

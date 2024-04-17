@@ -7,17 +7,17 @@ export const contactsSchema = z.object({
         .string()
         .trim()
         .min(1, { message: "Заповніть це поле" })
-        .min(3, { message: "Занадто коротке" })
+        .min(2, { message: "Занадто коротке" })
         .max(40, { message: "Забагато символів" }),
     phone: z
         .string()
-        .regex(regexPhone, "+380123456789")
-        .max(16, { message: "Забагато символів" }),
+        .min(1, { message: "Заповніть це поле" })
+        .regex(regexPhone, "+380123456789"),
     message: z
         .string()
         .trim()
         .min(1, { message: "Заповніть це поле" })
-        .max(240, { message: "Too long" }),
+        .max(240, { message: "Забагато символів" }),
 });
 
 //extract the inferred type from schema

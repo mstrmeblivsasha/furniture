@@ -20,6 +20,7 @@ html {
 body {
   min-height: 100vh;
   color: $Gray900;
+  font-family: var(--font-raleway);
 }
 .bluredBody {
   filter: blur(2px);
@@ -134,5 +135,22 @@ button {
 .active {
   &::after {
     width: 100%;
+  }
+}
+
+.hoverLink {
+  &:focus,
+  &:hover {
+    background-image: linear-gradient(135deg, #5b4947, #c19b97);
+    background-size: 200%;
+    background-position: left;
+
+    border-radius: 4px;
+    color: $Gray0;
+  }
+
+  &:target,
+  &:active {
+    background-position: right;
   }
 }

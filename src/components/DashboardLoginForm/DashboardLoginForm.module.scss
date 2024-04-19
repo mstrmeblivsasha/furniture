@@ -1,0 +1,38 @@
+@import "../../app/variables";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background-color: #a7a3a3;
+    gap: 20px;
+}
+
+.form input {
+    padding: 20px;
+    background-color: #0d0c22;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.form button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #3673fd;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.text {
+    color: #ffffff;
+}
+
+.link {
+    text-decoration: underline;
+    color: blue;
+    font-style: italic;
+}

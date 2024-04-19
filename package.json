@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "crypto": "^1.0.1",
+    "mongoose": "^8.3.1",
     "next": "14.1.4",
+    "next-cloudinary": "^6.5.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
     "sass": "^1.74.1",
+    "swr": "^2.2.5",
     "zod": "^3.22.4"
   },
   "devDependencies": {

@@ -1,0 +1,9 @@
+@import "../../app/variables";
+
+.container {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    padding: 20px 32px;
+    background-color: $gray0;
+}

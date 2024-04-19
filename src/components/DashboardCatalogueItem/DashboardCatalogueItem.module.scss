@@ -1,0 +1,57 @@
+@import "../../app/variables";
+
+.container {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    padding: 8px 16px;
+    background-color: $gray300;
+    color: $gray900;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    font-family: var(--font-noto-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+
+    @media screen and (min-width: $desktop) {
+        padding: 8px 24px;
+    }
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.category {
+    font-size: 20px;
+    color: $lightBlue;
+}
+
+.imgWrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @media screen and (min-width: $laptop) {
+        justify-content: center;
+    }
+}
+
+.imgWrapper:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.deleteIcon {
+    width: 22px;
+    height: 24px;
+    stroke: $gray900;
+    fill: transparent;
+}
+
+.deleteIcon:hover {
+    cursor: pointer;
+    stroke: #ff2828;
+}

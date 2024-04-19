@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   color: $Gray900;
 }
+
 .bluredBody {
   filter: blur(2px);
 }
@@ -85,6 +86,7 @@ main {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin-top: 70px;
 }
 
 .screen {
@@ -98,6 +100,7 @@ section {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+
   // height: 50vh;
   @media screen and (min-width: $tablet) {
     // background-color: red;

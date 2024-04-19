@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,16 +16,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-
     "target": "es5",
-
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -30,7 +34,25 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/BurgerBtn/BurgerBtn.tsx",
-    "src/context/SiteContext.tsx"
+    "src/utils/connectToDB.js",
+    "src/app/api/catalogue/[category]/route.ts",
+    "src/app/api/catalogue/route.js",
+    "src/app/(pages)/dashboard/page.jsx",
+    "src/fetch/ClientFetch.js",
+    "src/sections/dashboardCatalogueSection/DashboardCatalogueSection.jsx",
+    "src/components/DashboardCatalogueItem/DashboardCatalogueItem.jsx",
+    "src/sections/dashboardCatalogueCategorySection/DashboardCatalogueCategorySection.jsx",
+    "src/app/(pages)/catalogue/[category]/page.tsx",
+    "src/components/DashboardCatalogueCreateForm/DashboardCatalogueCreateForm.jsx",
+    "src/app/(pages)/dashboard/register/page.jsx",
+    "src/models/catalogueSchema.jsx",
+    "src/models/userSchema.jsx",
+    "src/components/DashboardRegisterForm/DashboardRegisterForm.jsx",
+    "src/components/DashboardLoginForm/DashboardLoginForm.jsx",
+    "src/components/DashboardCatalogueUpdateForm/DashboardCatalogueUpdateForm.jsx",
+    "src/context/SiteContext.tsx",
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

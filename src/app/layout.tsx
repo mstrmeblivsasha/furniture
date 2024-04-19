@@ -1,31 +1,33 @@
 import type { Metadata } from "next";
+
 import { Raleway } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 import "./globals.scss";
+import { SiteProvider } from "@/context/SiteContext";
 
 const raleway = Raleway({ subsets: ["cyrillic"], weight: ["400"] });
 
 export const metadata: Metadata = {
-    title: "МайстерМеблів",
-    description: "МайстерМеблів. Новомосковськ, Дніпро",
+  title: "МайстерМеблів",
+  description: "МайстерМеблів. Новомосковськ, Дніпро",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="uk">
-            <body className={raleway.className}>
-                {/* <SiteProvider> */}
-                <Header />
-                <main>{children}</main>
-                <Footer />
-                {/* </SiteProvider> */}
-            </body>
-        </html>
-    );
+  return (
+    <html lang="uk">
+      <body className={raleway.className}>
+        <SiteProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </SiteProvider>
+      </body>
+    </html>
+  );
 }

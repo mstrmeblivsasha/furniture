@@ -5,8 +5,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(217, 206, 207, 1);
+    background-color: $Secondary100;
     padding: 16px;
+    @media screen and (min-width: $tablet) {
+        padding: 20px;
+    }
+    @media screen and (min-width: $laptop) {
+        padding: 40px;
+    }
 }
 
 .title {
@@ -14,21 +20,20 @@
     text-align: center;
     border-bottom: 1px solid #000;
     line-height: 0.1em;
-    margin: 10px 0 20px;
+    margin: 16px 0 50px;
 
     font-weight: 400;
     font-size: 28px;
     color: rgba(59, 48, 48, 1);
-    // margin-bottom: 10px;
-    // @media screen and ($tablet) {
-    //     font-size: 16px;
-    // }
-    // @media screen and ($laptop) {
-    //     font-size: 20px;
-    // }
+    @media screen and (min-width: $tablet) {
+        font-size: 48px;
+    }
+    @media screen and (min-width: $laptop) {
+        font-size: 62px;
+    }
 }
 
 .title span {
-    background: rgba(217, 206, 207, 1);
+    background: $Secondary100;
     padding: 0 10px;
 }

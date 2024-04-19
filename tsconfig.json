@@ -10,12 +10,13 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "commonjs",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "target": "es5",
     "plugins": [
       {
         "name": "next"
@@ -33,8 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/BurgerBtn/BurgerBtn.tsx",
-    "src/utils/connectToDB.j/s",
-    "src/utils/connectToDB.tsx",
+    "src/utils/connectToDB.js",
     "src/app/api/catalogue/[category]/route.ts",
     "src/app/api/catalogue/route.js",
     "src/app/(pages)/dashboard/page.jsx",
@@ -49,7 +49,8 @@
     "src/models/userSchema.jsx",
     "src/components/DashboardRegisterForm/DashboardRegisterForm.jsx",
     "src/components/DashboardLoginForm/DashboardLoginForm.jsx",
-    "src/components/DashboardCatalogueUpdateForm/DashboardCatalogueUpdateForm.jsx"
+    "src/components/DashboardCatalogueUpdateForm/DashboardCatalogueUpdateForm.jsx",
+    "src/context/SiteContext.tsx",
   ],
   "exclude": [
     "node_modules"

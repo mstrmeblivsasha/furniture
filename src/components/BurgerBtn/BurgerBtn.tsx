@@ -1,14 +1,53 @@
-import React, { useContext } from "react";
+"use client";
+
+import React, { useContext, useEffect } from "react";
 import styles from "./BurgerBtn.module.scss";
+import { SiteContext } from "@/context/SiteContext";
+// import { useWindowResize } from "@/hooks/windowResize";
 
 const BurgerBtn = () => {
-  // const {   burgerMenu,
-  //   setBurgermenu}  =   useContext(SiteContext);
+  const { isMobileMenu, setIsMobileMenu } = useContext(SiteContext);
+  // const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
+
+  useEffect(() => {
+    const handleBodyClass = () => {
+      const mainEl = document.querySelector("main");
+      if (mainEl) {
+        if (isMobileMenu) {
+          mainEl.classList.add("bluredBody");
+        } else {
+          mainEl.classList.remove("bluredBody");
+        }
+      }
+    };
+
+    handleBodyClass();
+
+    return () => {
+      // Видалення обробника подій при видаленні компонента
+      const mainEl = document.querySelector("main");
+      if (mainEl) {
+        mainEl.classList.remove("bluredBody");
+      }
+    };
+  }, [isMobileMenu]);
+
   return (
-    <button className={styles.burgerBtn}>
-      <svg>
-        <use href="./sprite.svg#icon-burger"></use>
-      </svg>
+    <button
+      className={styles.burgerBtn}
+      onClick={() => {
+        setIsMobileMenu(!isMobileMenu);
+      }}
+    >
+      {isMobileMenu ? (
+        <svg>
+          <use href="./sprite.svg#icon-burgerclose"></use>
+        </svg>
+      ) : (
+        <svg>
+          <use href="./sprite.svg#icon-burger"></use>
+        </svg>
+      )}
     </button>
   );
 };

@@ -3,28 +3,33 @@
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    -webkit-transition-duration: 250ms;
-    -o-transition-duration: 250ms;
-    transition-duration: 250ms;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+  color: $Gray900;
+}
+
+.bluredBody {
+  filter: blur(2px);
 }
 
 header,
 footer {
-    width: inherit;
-    max-width: inherit;
+  width: inherit;
+  max-width: inherit;
 }
 
 body,
@@ -32,104 +37,104 @@ main,
 .screen,
 section,
 article {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 // scrollbar
 
 *::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
-    -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
-    box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
+  width: 7px;
+  height: 7px;
+  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
+  box-shadow: inset 0 0 6px rgb(0 0 0 / 0%);
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
 }
 
 *::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 0px rgb(0 0 0 / 0%);
-    box-shadow: inset 0 0 0px rgb(0 0 0 / 0%);
-    -webkit-border-radius: 0px;
-    background: #1e1e1e;
-    border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 0px rgb(0 0 0 / 0%);
+  box-shadow: inset 0 0 0px rgb(0 0 0 / 0%);
+  -webkit-border-radius: 0px;
+  background: #1e1e1e;
+  border-radius: 0px;
 }
 
 *::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    // background: linear-gradient(
-    //     to top,
-    //     $gradientYellow,
-    //     $gradientCyan,
-    //     $gradientBlue
-    // );
-    height: 2.5px;
+  border-radius: 10px;
+  // background: linear-gradient(
+  //     to top,
+  //     $gradientYellow,
+  //     $gradientCyan,
+  //     $gradientBlue
+  // );
+  height: 2.5px;
 }
 
 // scrollbar end
 
 main {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .screen {
-    height: 100%;
+  height: 100%;
 }
 
 section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    @media screen and (min-width: $tablet) {
-        // background-color: red;
-    }
+  // height: 50vh;
+  @media screen and (min-width: $tablet) {
+    // background-color: red;
+  }
 }
 
 ul,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .container {
-    width: 100%;
-    height: 100%;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    //   align-items: center;
-    //   justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  //   align-items: center;
+  //   justify-content: center;
 }
 
 .active {
-    &::after {
-        width: 100%;
-    }
+  &::after {
+    width: 100%;
+  }
 }

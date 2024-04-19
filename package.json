@@ -19,12 +19,14 @@
     "react-hook-form": "^7.51.3",
     "sass": "^1.74.1",
     "swr": "^2.2.5",
+    "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.8",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "typescript": "^5"

@@ -3,9 +3,10 @@ import styles from "./Logo.module.scss";
 import { Noto_Serif } from "next/font/google";
 
 const notoSerif = Noto_Serif({ subsets: ["cyrillic"], weight: ["300"] });
-interface LogoProps {
-  className?: string; // Опційний className
-}
+
+type LogoProps = {
+  className?: string;
+};
 
 const Logo = ({ className }: LogoProps) => {
   return (

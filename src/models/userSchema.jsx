@@ -3,18 +3,11 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
     {
-        // ім'я  (text - input)
-        name: {
-            type: String,
-            required: true,
-        },
-        // пошта (text - input)
         email: {
             type: String,
             required: true,
             unique: true,
         },
-        // пароль (text - input)
         password: {
             type: String,
             required: true,

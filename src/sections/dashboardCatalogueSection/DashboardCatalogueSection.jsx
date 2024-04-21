@@ -6,6 +6,7 @@ import { GetDataWithPathname } from "@/fetch/ClientFetch"
 
 
 const DashboardCatalogueSection = () => {
+
     const { data, isLoading } = GetDataWithPathname()
     console.log('data', data)
 

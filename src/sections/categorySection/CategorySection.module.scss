@@ -1,0 +1,125 @@
+@import "../../app/variables";
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $Secondary50;
+    padding: 16px;
+    @media screen and (min-width: $tablet) {
+        padding: 20px;
+    }
+    @media screen and (min-width: $laptop) {
+        padding: 40px;
+    }
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 16px 0 50px;
+
+    font-weight: 400;
+    font-size: 28px;
+    color: rgba(59, 48, 48, 1);
+    @media screen and (min-width: $tablet) {
+        font-size: 48px;
+    }
+    @media screen and (min-width: $laptop) {
+        font-size: 62px;
+    }
+}
+
+.title span {
+    background: $Secondary50;
+    padding: 0 10px;
+}
+
+.imgBox {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin-bottom: 12px;
+    // @media screen and (min-width: $tablet) {
+    //     width: 318px;
+    //     height: 320px;
+    // }
+}
+
+.img {
+    object-fit: cover;
+}
+
+.descriptionBox {
+    width: 280px;
+    margin-bottom: 12px;
+}
+
+.subTitle {
+    // font-family: "Raleway";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: $Primary900;
+    margin-bottom: 4px;
+    // @media screen and (min-width: $tablet) {
+    //     font-size: 20px;
+    // }
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: $Primary900;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    width: 100%;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $Primary900;
+    color: $Gray0;
+    margin-top: 12px;
+
+    // @media screen and (min-width: $tablet) {
+    //     width: 432px;
+    //     margin-bottom: 0;
+    //     margin-right: auto;
+    //     margin-left: auto;
+    // }
+    // @media screen and (min-width: $laptop) {
+    //     width: 384px;
+    //     height: 48px;
+    // }
+
+    &:hover,
+    &:focus {
+        scale: 1.02;
+    }
+}
+
+.sliderBox {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sliderTitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: $Primary900;
+    margin-bottom: 12px;
+    text-align: center;
+}

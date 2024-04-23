@@ -2,7 +2,7 @@
 import bcrypt from "bcryptjs";
 import { connectToDB } from "@/utils/connectToDB"
 import { User } from "@/models/userSchema"
-import { signIn } from "./auth";
+import { signIn, signOut } from "./auth";
 
 
 // previousState - инф-ция об ошибках для useFormState
@@ -50,4 +50,10 @@ export const login = async (previousState, formData) => {
         // return { error: "Something went wrong" } был заменён на написанное ниже, чтобы исключить ошибку NEXT_REDIRECT при правильно введённых логине и пароле
         throw error;
     }
+}
+
+
+export const handleLogout = async () => {
+    "use server"
+    await signOut();
 }

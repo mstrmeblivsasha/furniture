@@ -7,7 +7,7 @@ import { register } from '@/auth/action'
 import styles from './DashboardRegisterForm.module.scss'
 
 
-const DashboardRegisterForm = () => {
+const DashboardRegisterForm = ({ session }) => {
     // содержит информацию об ошибках
     const [state, formAction] = useFormState(register, undefined);
 
@@ -18,16 +18,20 @@ const DashboardRegisterForm = () => {
     }, [state?.success, router]);
 
     return (
-        <form className={styles.form} action={formAction}>
-            <h2>Форма реєстрації</h2>
-            <input type="email" placeholder="email" name="email" />
-            <input type="password" placeholder="password" name="password" />
-            <button>Зареєструватись</button>
+        <>
+            {!session?.user
+                ? <form className={styles.form} action={formAction}>
+                    <h2>Форма реєстрації</h2>
+                    <input type="email" placeholder="email" name="email" />
+                    <input type="password" placeholder="password" name="password" />
+                    <button>Зареєструватись</button>
 
-            {state?.error && <p className={styles.errMessage} >{state.error}</p>}
+                    {state?.error && <p className={styles.errMessage} >{state.error}</p>}
 
-            <p className={styles.text}>Вже зареєстровані? <Link className={styles.link} href='/dashboard'>Вхід</Link> </p>
-        </form>
+                    <p className={styles.text}>Вже зареєстровані? <Link className={styles.link} href='/dashboard'>Вхід</Link> </p>
+                </form>
+                : null}
+        </>
     )
 }
 

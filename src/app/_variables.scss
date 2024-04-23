@@ -26,3 +26,12 @@ $gray100: #ececf0;
 $gray50: #f6f6fa;
 $gray0: #ffffff;
 $lightBlue: #1a8cff;
+
+$gradientYellow: #faff00;
+$gradientCyan: #00f0ff;
+$gradientBlue: #0400b3;
+
+$gradient: linear-gradient(170deg,
+        $gradientYellow,
+        $gradientCyan,
+        $gradientBlue);

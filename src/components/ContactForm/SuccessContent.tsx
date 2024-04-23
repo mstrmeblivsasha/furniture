@@ -15,12 +15,7 @@ const SuccessContent = ({ setSubmited }: TypeProps) => {
                     передзвоню вам найближчим часом!
                 </h2>
                 <div className={styles.imgWrap}>
-                    <Image
-                        src='/successMan.webp'
-                        priority={true}
-                        fill
-                        alt='Picture of man'
-                    />
+                    <Image src='/successMan.webp' fill alt='Picture of man' />
                 </div>
             </div>
             <button

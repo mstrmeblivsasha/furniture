@@ -52,6 +52,8 @@
     "src/components/DashboardCatalogueUpdateForm/DashboardCatalogueUpdateForm.jsx",
     "src/context/SiteContext.tsx",
     "src/auth/auth.js",
+    "src/sections/dashboardRegisterSection/DashboardRegisterSection.jsx",
+    "src/sections/dashboardLoginSection/DashboardLoginSection.jsx",
   ],
   "exclude": [
     "node_modules"

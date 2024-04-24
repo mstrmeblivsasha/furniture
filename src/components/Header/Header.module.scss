@@ -3,7 +3,8 @@
 .header {
   height: 70px;
   background-color: $Gray0;
-  padding: 16px 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   position: fixed;
   z-index: 100;
   @media screen and (min-width: $tablet) {
@@ -12,9 +13,7 @@
 }
 .container {
   position: relative;
-  @media screen and (min-width: $laptop) {
-    align-items: center;
-  }
+  align-items: center;
 }
 
 .tell {

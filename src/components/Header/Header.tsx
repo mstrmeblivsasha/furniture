@@ -13,7 +13,7 @@ type NavLinksStylesFunction = () => string | undefined;
 const Header = () => {
   const { isMobileMenu } = useContext(SiteContext);
   // console.log(isMobileMenu);
-  const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
+  const { isMobile, isTablet } = useWindowResize();
 
   const navlinksStyles: NavLinksStylesFunction = () => {
     if ((isMobile || isTablet) && isMobileMenu) {

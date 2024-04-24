@@ -23,13 +23,19 @@ body {
   font-family: var(--font-raleway);
 }
 .bluredBody {
-  filter: blur(2px);
+  filter: blur(2px) brightness(0.8) hue-rotate(15deg);
 }
 
 header,
 footer {
   width: inherit;
   max-width: inherit;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media screen and (min-width: $tablet) {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 }
 
 body,
@@ -71,12 +77,6 @@ article {
 
 *::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  // background: linear-gradient(
-  //     to top,
-  //     $gradientYellow,
-  //     $gradientCyan,
-  //     $gradientBlue
-  // );
   height: 2.5px;
 }
 
@@ -101,7 +101,8 @@ section {
   padding-right: 20px;
   // height: 50vh;
   @media screen and (min-width: $tablet) {
-    // background-color: red;
+    padding-left: 56px;
+    padding-right: 56px;
   }
 }
 
@@ -128,8 +129,8 @@ button {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
+  // align-items: center;
+  // justify-content: center;
 }
 
 .active {

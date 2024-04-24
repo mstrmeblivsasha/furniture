@@ -13,7 +13,7 @@
     stroke: $Gray900;
   }
 
-  @media screen and (min-width: $laptop) {
+  @media screen and (min-width: $desktop) {
     display: none;
   }
 }

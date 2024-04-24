@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   color: $Gray900;
   font-family: var(--font-raleway);
+  font-style: normal;
 }
 .bluredBody {
   filter: blur(2px) brightness(0.8) hue-rotate(15deg);

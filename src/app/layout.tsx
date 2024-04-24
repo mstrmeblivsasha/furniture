@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Raleway, Noto_Serif } from "next/font/google";
+import { Raleway, Noto_Serif, Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
@@ -18,6 +18,12 @@ const notoSerif = Noto_Serif({
   variable: "--font-notoSerif",
 });
 
+const inter = Inter({
+  subsets: ["cyrillic"],
+  weight: ["300"],
+  variable: "--font-inter",
+});
+
 export const metadata: Metadata = {
   title: "МайстерМеблів",
   description: "МайстерМеблів. Новомосковськ, Дніпро",
@@ -30,11 +36,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <body className={`${raleway.variable} ${notoSerif.variable}`}>
+      <body
+        className={`${raleway.variable} ${notoSerif.variable} ${inter.variable}`}
+      >
         <SiteProvider>
           <Header />
           <main>{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </SiteProvider>
       </body>
     </html>

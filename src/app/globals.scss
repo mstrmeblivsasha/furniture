@@ -99,6 +99,7 @@ section {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+
   // height: 50vh;
   @media screen and (min-width: $tablet) {
     padding-left: 56px;
@@ -137,6 +138,26 @@ button {
   &::after {
     width: 100%;
   }
+<<<<<<< HEAD
+}
+
+.hoverLink {
+  &:focus,
+  &:hover {
+    background-image: linear-gradient(135deg, #5b4947, #c19b97);
+    background-size: 200%;
+    background-position: left;
+
+    border-radius: 4px;
+    color: $Gray0;
+  }
+
+  &:target,
+  &:active {
+    background-position: right;
+  }
+}
+=======
 }
 
 .hoverLink {

@@ -7,8 +7,33 @@ $Gray0: rgba(255, 255, 255, 1);
 $Gray600: rgba(94, 94, 97, 1);
 $Gray900: rgba(19, 19, 19, 1);
 $Secondary100: rgba(217, 206, 207, 1);
+$Secondary50: rgba(239, 236, 236, 1);
 $Primary900: rgba(59, 48, 48, 1);
 
 $Primary900: rgba(59, 48, 48, 1);
 
 // $transitionDuration: 250ms;
+
+$gray900: #0d0d11;
+$gray800: #2e2e31;
+$gray700: #4b4b4e;
+$gray600: #5e5e61;
+$gray500: #858588;
+$gray400: #a6a6aa;
+$gray300: #cbcbcf;
+$gray200: #dfdfe3;
+$gray100: #ececf0;
+$gray50: #f6f6fa;
+$gray0: #ffffff;
+$lightBlue: #1a8cff;
+
+$gradientYellow: #faff00;
+$gradientCyan: #00f0ff;
+$gradientBlue: #0400b3;
+
+$gradient: linear-gradient(
+    170deg,
+    $gradientYellow,
+    $gradientCyan,
+    $gradientBlue
+);

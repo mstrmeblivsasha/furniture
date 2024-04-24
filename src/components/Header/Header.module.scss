@@ -14,6 +14,7 @@
 .container {
   position: relative;
   align-items: center;
+  justify-content: space-between;
 }
 
 .tell {
@@ -50,12 +51,24 @@
   background-color: $Gray0;
   overflow: hidden;
   width: 176px;
+  gap: 12px;
 
   & a {
     padding: 8px;
   }
-
+  @media screen and (min-width: $tablet) {
+    top: 84px;
+    width: 208px;
+    gap: 20px;
+  }
   @media screen and (min-width: $laptop) {
+    font-size: 24px;
+    width: 308px;
+    gap: 32px;
+    padding: 48px;
+  }
+
+  @media screen and (min-width: $desktop) {
     position: static;
     flex-direction: row;
     padding: 0;
@@ -63,15 +76,18 @@
     overflow: auto;
     width: fit-content;
     height: fit-content;
-    margin-left: auto;
-    // gap: clamp(12px, 1vw, 16px);
-    // gap: 12px;
-    font-size: clamp(16px, 1.7vw, 28px);
+
+    font-size: 20px;
+    gap: 12px;
   }
 }
+
 .navLinksHidden {
   padding: 0px 20px;
   height: 0px;
+  @media screen and (min-width: $laptop) {
+    padding: 0px 48px;
+  }
 }
 
 // @keyframes navLink {

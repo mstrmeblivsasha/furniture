@@ -13,12 +13,12 @@ type NavLinksStylesFunction = () => string | undefined;
 const Header = () => {
   const { isMobileMenu } = useContext(SiteContext);
   // console.log(isMobileMenu);
-  const { isMobile, isTablet } = useWindowResize();
+  const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
 
   const navlinksStyles: NavLinksStylesFunction = () => {
-    if ((isMobile || isTablet) && isMobileMenu) {
+    if (!isDesktop && isMobileMenu) {
       return `${styles.navLinks}`;
-    } else if ((isMobile || isTablet) && !isMobileMenu) {
+    } else if (!isDesktop && !isMobileMenu) {
       return `${styles.navLinks} ${styles.navLinksHidden}`;
     } else {
       return `${styles.navLinks}`;
@@ -28,9 +28,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        {isMobile || isTablet ? (
-          <BurgerBtn />
-        ) : (
+        {!isDesktop && <BurgerBtn />}
+        {(!isMobile || !isTablet) && (
           <a href="tel:+380973988008" className={`${styles.tell} hoverLink`}>
             +380-97-398-80-08
           </a>

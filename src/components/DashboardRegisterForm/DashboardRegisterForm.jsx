@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { register } from '@/auth/action'
 import styles from './DashboardRegisterForm.module.scss'
+import { assert } from 'console'
 
 
 const DashboardRegisterForm = ({ session }) => {

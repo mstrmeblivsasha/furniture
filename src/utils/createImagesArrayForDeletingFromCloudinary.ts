@@ -1,4 +1,4 @@
-export const createImagesArrayForDeletingFromCloudinary = (data) => {
+export const createImagesArrayForDeletingFromCloudinary = (data: TypeImagesForDeleting) => {
     const arrayForDeleting = [];
 
     if (data.hasOwnProperty("image")) {

@@ -10,7 +10,7 @@ const DashboardCatalogueSection = () => {
     const { data, isLoading } = GetDataWithPathname()
     console.log('data', data)
 
-    let sortedByUpdateData = [];
+    let sortedByUpdateData: TypeCatalogueFromDB[] = [];
 
     if (!isLoading) {
         sortedByUpdateData = [...data];

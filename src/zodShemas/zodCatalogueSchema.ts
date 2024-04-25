@@ -31,7 +31,3 @@ export const zodCatalogueSchema = z.object({
         .array()
         .nonempty({ message: "Додайте фото" }),
 });
-
-
-//extract the inferred type from schema
-export type TypeCatalogueSchema = z.infer<typeof zodCatalogueSchema>;

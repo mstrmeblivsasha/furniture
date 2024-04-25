@@ -3,14 +3,14 @@ $tablet: "768px";
 $laptop: "1024px";
 $desktop: "1440px";
 
-$Gray0: rgba(255, 255, 255, 1);
-$Gray600: rgba(94, 94, 97, 1);
-$Gray900: rgba(19, 19, 19, 1);
-$Secondary100: rgba(217, 206, 207, 1);
-$Secondary50: rgba(239, 236, 236, 1);
-$Primary900: rgba(59, 48, 48, 1);
+$Gray0: #ffffff;
+$Gray600: #5e5e61;
+$Gray900: #131313;
+$Secondary100: #d9cecf;
+$Secondary50: #efecec;
+$Primary900: #3b3030;
 
-$Primary900: rgba(59, 48, 48, 1);
+$Primary900: #3b3030;
 
 // $transitionDuration: 250ms;
 
@@ -27,13 +27,73 @@ $gray50: #f6f6fa;
 $gray0: #ffffff;
 $lightBlue: #1a8cff;
 
-$gradientYellow: #faff00;
-$gradientCyan: #00f0ff;
-$gradientBlue: #0400b3;
 
-$gradient: linear-gradient(
-    170deg,
-    $gradientYellow,
-    $gradientCyan,
-    $gradientBlue
-);
+
+
+
+// -----------  M A K S  ------
+$loginFormBackgroundColor: #a7a3a3;
+$formButtonHoverBackgroundColor: #a8a7a1;
+$uploadBtnBackgroundColor: #cac9c3;
+$containerBackgroundColor: #cbcbcf;
+$borderColor: #ded8d4;
+$formBackgroundColor: #e7e5e0;
+$gradientYellow: #faff00;
+$formButtonColor: #ffffff; // and input
+$errorColor: #ff0000;
+$deleteIconHoverColor: #ff2828;
+$exitIconHoverFillColor: #ff2828;
+$inputBackgroundColor: #f2f0e9;
+$loginFormInputBackgroundColor: #0d0c22;
+$containerColor: #0d0d11;
+$gradientCyan: #00f0ff;
+$loginFormLinkColor: #0000ff;
+$gradientBlue: #0400b3;
+$exitIconStrokeColor: #0807f3;
+$categoryColor: #1a8cff;
+$loginFormButtonBackgroundColor: #3673fd;
+$formButtonBackgroundColor: #4a4535;
+$formButtonHoverColor: #4a4535;
+$formInputcolor: #4a4535ad;
+$formLabelColor: #4a45358b;
+$exitIconFillColor: #5680eb;
+$formTitleColor: #808080;
+$exitIconHoverStrokeColor: #9f2a2a;
+
+$gradient: linear-gradient(170deg,
+        $gradientYellow,
+        $gradientCyan,
+        $gradientBlue);
+
+// // -----------  M A K S  ------
+// //DashboardCatalogueCreateForm and updateForm
+// $formButtonHoverBackgroundColor: #a8a7a1;
+// $uploadBtnBackgroundColor: #cac9c3;
+// $borderColor: #ded8d4;
+// $formBackgroundColor: #e7e5e0;
+// $formButtonColor: #ffffff; // and input
+// $errorColor: #ff0000;
+// $inputBackgroundColor: #f2f0e9;
+// $formButtonBackgroundColor: #4a4535;
+// $formButtonHoverColor: #4a4535;
+// $formInputcolor: #4a4535ad;
+// $formLabelColor: #4a45358b;
+// $formTitleColor: #808080;
+
+// //DashboardCatalogueItem
+// $containerBackgroundColor: #cbcbcf;
+// $containerColor: #0d0d11;
+// $categoryColor: #1a8cff;
+// $deleteIconHoverColor: #ff2828;
+
+// //DashboardLoginForm and register form
+// $loginFormBackgroundColor: #a7a3a3;
+// $loginFormInputBackgroundColor: #0d0c22;
+// $loginFormButtonBackgroundColor: #3673fd;
+// $loginFormLinkColor: #0000ff;
+
+// //logoutBtn
+// $exitIconStrokeColor: #0807f3;
+// $exitIconFillColor: #5680eb;
+// $exitIconHoverStrokeColor: #9f2a2a;
+// $exitIconHoverFillColor: #ff2828;

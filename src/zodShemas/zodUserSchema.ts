@@ -11,7 +11,3 @@ export const zodUserSchema = z.object({
         .trim()
         .min(6, { message: "Заповніть це поле" }),
 });
-
-
-//extract the inferred type from schema
-export type TypeUserSchema = z.infer<typeof zodUserSchema>;

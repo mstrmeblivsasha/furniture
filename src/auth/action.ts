@@ -6,8 +6,7 @@ import { signIn, signOut } from "./auth";
 
 
 // previousState - инф-ция об ошибках для useFormState
-export const register = async (previousState, formData) => {
-    // console.log('formData', formData)
+export const register = async (previousState: string | null, formData: Iterable<readonly [PropertyKey, string]>) => {
     const { email, password } = Object.fromEntries(formData);
     try {
         await connectToDB();
@@ -35,14 +34,13 @@ export const register = async (previousState, formData) => {
 
 
 // используется в loginForm. вызывается signIn из auth.js (передавая credentials). там выполняется алгоритм в части CredentialsProvider
-export const login = async (previousState, formData) => {
-    // console.log('formData', formData)
+export const login = async (previousState: string | null, formData: Iterable<readonly [PropertyKey, string]>) => {
     const { email, password } = Object.fromEntries(formData);
-    // console.log('email', email, 'password', password)
     try {
         await signIn("credentials", { email, password })
 
-    } catch (error) {
+    } catch (error: any) {
+        console.log("error", error)
         // проверка на ошибку, чтобы вывести спец сообщение "Invalid username or password" с помощью useFormState в поле ошибки в loginForm
         if (error.message.includes("CredentialsSignin")) {
             return { error: "Invalid username or password" };

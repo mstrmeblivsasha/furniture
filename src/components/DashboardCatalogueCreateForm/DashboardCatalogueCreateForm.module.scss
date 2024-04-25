@@ -10,13 +10,13 @@
     flex-direction: column;
 
     row-gap: 20px;
-    background-color: #e7e5e0;
+    background-color: $formBackgroundColor;
     padding: 30px 0 30px;
 }
 
 .formTitle {
     max-width: 400px;
-    color: gray;
+    color: $formTitleColor;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1.2px;
@@ -34,8 +34,8 @@
     background-color: transparent;
     outline: none;
     border-radius: 10px;
-    border: 1px solid #ded8d4;
-    background-color: #f2f0e9;
+    border: 1px solid $borderColor;
+    background-color: $inputBackgroundColor;
     padding: 12px 20px;
 
     &:focus+.formLabel,
@@ -43,9 +43,7 @@
         transform: translateY(-110%) scale(0.9);
         transition-duration: 250ms;
         padding-inline: 4px;
-        color: #4a4535ad;
-
-        // background: linear-gradient(to top, #f2f0e9 50%, #e7e5e0 50%);
+        color: $formInputcolor;
     }
 }
 
@@ -53,7 +51,7 @@
     position: absolute;
     top: 10px;
     left: 16px;
-    color: #4a45358b;
+    color: $formLabelColor;
     pointer-events: none;
     transition-duration: 250ms;
 }
@@ -62,7 +60,7 @@
     position: absolute;
     top: -17px;
     right: 10px;
-    color: red;
+    color: $errorColor;
     font-size: 14px;
 }
 
@@ -76,8 +74,8 @@
     background-color: transparent;
     outline: none;
     border-radius: 30px;
-    border: 1px solid #ded8d4;
-    background-color: #cac9c3;
+    border: 1px solid $borderColor;
+    background-color: $uploadBtnBackgroundColor;
     padding: 12px 20px;
 }
 
@@ -87,16 +85,16 @@
     border: none;
     outline: none;
     padding: 12px 62px;
-    background-color: #4a4535;
+    background-color: $formButtonBackgroundColor;
     border-radius: 20px;
-    color: #fff;
+    color: $formButtonColor;
     font-weight: inherit;
     transition-duration: 250ms;
 
     &:hover,
     &:focus {
-        background-color: #a8a7a1;
-        color: #4a4535;
+        background-color: $formButtonHoverBackgroundColor;
+        color: $formButtonHoverColor;
         transition-duration: 250ms;
     }
 }

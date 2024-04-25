@@ -7,7 +7,7 @@ import styles from './DashboardCatalogueCategorySection.module.scss'
 
 const DashboardCatalogueCategorySection = () => {
     const { data, isLoading } = GetDataWithPathname()
-
+    console.log("data", data)
 
     return (
         <>

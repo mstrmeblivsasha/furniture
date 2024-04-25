@@ -9,14 +9,14 @@
     flex-direction: column;
     text-align: center;
     padding: 20px;
-    background-color: #a7a3a3;
+    background-color: $loginFormBackgroundColor;
     gap: 20px;
 }
 
 .form input {
     padding: 20px;
-    background-color: #0d0c22;
-    color: #ffffff;
+    background-color: $loginFormInputBackgroundColor;
+    color: $formButtonColor;
     border: none;
     border-radius: 5px;
 }
@@ -24,8 +24,8 @@
 .form button {
     padding: 10px;
     cursor: pointer;
-    background-color: #3673fd;
-    color: #ffffff;
+    background-color: $loginFormButtonBackgroundColor;
+    color: $formButtonColor;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -34,15 +34,15 @@
 .errMessage {
     font-weight: 700;
     font-size: 20px;
-    color: red;
+    color: $errorColor;
 }
 
 .text {
-    color: #ffffff;
+    color: $formButtonColor;
 }
 
 .link {
     text-decoration: underline;
-    color: blue;
+    color: $loginFormLinkColor;
     font-style: italic;
 }

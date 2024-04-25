@@ -3,7 +3,7 @@
 import crypto from "crypto";
 
 
-export const handleDeleteImgFromCloudinary = async (publicId) => {
+export const handleDeleteImgFromCloudinary = async (publicId: string) => {
 
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
     const apiSecret = process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET;
@@ -15,7 +15,7 @@ export const handleDeleteImgFromCloudinary = async (publicId) => {
     };
 
     // шифрует для клоудинари сгенерированную подпись
-    const generateSHA1 = (data) => {
+    const generateSHA1 = (data: string) => {
         const hash = crypto.createHash("sha1");
         hash.update(data);
         return hash.digest("hex");

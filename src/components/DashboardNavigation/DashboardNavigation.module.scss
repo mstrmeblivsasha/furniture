@@ -8,16 +8,15 @@
         justify-content: space-evenly;
         align-items: center;
         height: 50px;
-        background-color: #cbcbcf;
+        background-color: $containerBackgroundColor;
     }
 }
 
 .pageLink {
-    // font-family: var(--font-noto-sans);
     font-weight: 700;
     font-size: 20px;
     line-height: 1.6;
-    color: $gray900;
+    color: $containerColor;
 
     position: relative;
     display: inline-block;

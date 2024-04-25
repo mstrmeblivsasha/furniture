@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { CldUploadButton } from 'next-cloudinary'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { zodCatalogueUpdateSchema } from '@/zodShemas/zodCatalogueUpdateSchema'
-// import { TypeCatalogueSchema } from "@/zodShemas/zodCatalogueSchema"
 import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudinary'
 import styles from './DashboardCatalogueUpdateForm.module.scss'
 

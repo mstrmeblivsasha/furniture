@@ -1,5 +1,5 @@
 import { auth } from "@/auth/auth";
-import DashboardRegisterForm from "@/components/DashboardRegisterForm/DashboardRegisterForm"
+import DashboardRegisterForm from "@/components/DashboardRegisterForm/DashboardRegisterForm";
 
 
 const DashboardRegisterSection = async () => {

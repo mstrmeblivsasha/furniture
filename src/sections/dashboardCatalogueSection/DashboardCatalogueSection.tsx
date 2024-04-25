@@ -1,8 +1,8 @@
 'use client'
-import DashboardCatalogueCreateForm from "@/components/DashboardCatalogueCreateForm/DashboardCatalogueCreateForm"
-import DashboardCatalogueItem from "@/components/DashboardCatalogueItem/DashboardCatalogueItem"
-import styles from './DashboardCatalogueSection.module.scss'
+import DashboardCatalogueItem from '@/components/DashboardCatalogueItem/DashboardCatalogueItem'
+import DashboardCatalogueCreateForm from '@/components/DashboardCatalogueCreateForm/DashboardCatalogueCreateForm'
 import { GetDataWithPathname } from "@/fetch/ClientFetch"
+import styles from './DashboardCatalogueSection.module.scss'
 
 
 const DashboardCatalogueSection = () => {

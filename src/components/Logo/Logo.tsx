@@ -1,8 +1,9 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./Logo.module.scss";
-import { Noto_Serif } from "next/font/google";
+// import { Noto_Serif } from "next/font/google";
 
-const notoSerif = Noto_Serif({ subsets: ["cyrillic"], weight: ["300"] });
+// const notoSerif = Noto_Serif({ subsets: ["cyrillic"], weight: ["300"] });
 
 type LogoProps = {
   className?: string;
@@ -11,9 +12,12 @@ type LogoProps = {
 const Logo = ({ className }: LogoProps) => {
   return (
     <>
-      <p className={`${notoSerif.className} ${styles.logo} ${className}`}>
+      {/* <p className={`${notoSerif.className} ${styles.logo} ${className}`}>
         МайстерМеблів
-      </p>
+      </p> */}
+      <Link href="/" className={`${styles.logo} ${className}`}>
+        МайстерМеблів
+      </Link>
     </>
   );
 };

@@ -1,7 +1,15 @@
 @import "../../app/variables";
 
 .logo {
-  font-family: "Noto Serif";
+  font-family: var(--font-notoSerif);
   font-size: 24px;
   font-weight: 300;
+  // font-size: clamp(24px, 1.7vw, 36px);
+
+  @media screen and (min-width: $tablet) {
+    font-size: 36px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 32px;
+  }
 }

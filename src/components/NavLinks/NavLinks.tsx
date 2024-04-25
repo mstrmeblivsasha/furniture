@@ -8,6 +8,7 @@ import styles from "./NavLinks.module.scss";
 type navProps = {
   className?: string;
 };
+
 type elProps = {
   id: string;
   href: string;
@@ -18,7 +19,7 @@ const NavLinks = ({ className }: navProps) => {
   return (
     <nav className={`${styles.nav} ${className}`}>
       {navlinks.map((el: elProps) => (
-        <Link key={el.id} href={el.href} className={styles.navLink}>
+        <Link key={el.id} href={el.href} className="hoverLink">
           {el.title}
         </Link>
       ))}

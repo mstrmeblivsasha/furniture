@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, Dispatch, SetStateAction } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactsSchema } from "@/zodShemas/contactsShema";
@@ -9,8 +9,12 @@ import SuccessContent from "./SuccessContent";
 
 import styles from "./ContactForm.module.scss";
 
-const ContactForm = () => {
-    const [isSubmited, setSubmited] = useState(false);
+type TypeProps = {
+    isSubmited: boolean;
+    setSubmited: Dispatch<SetStateAction<boolean>>;
+};
+
+const ContactForm = ({ isSubmited, setSubmited }: TypeProps) => {
     const {
         register,
         handleSubmit,

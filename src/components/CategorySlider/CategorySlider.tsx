@@ -23,11 +23,11 @@ const CategorySlider = ({ images }: TypeSliderProps) => {
                         spaceBetween: 24,
                     },
                     1024: {
-                        slidesPerView: 4,
+                        slidesPerView: 3,
                         spaceBetween: 24,
                     },
                     1440: {
-                        slidesPerView: 4,
+                        slidesPerView: 3,
                         spaceBetween: 24,
                     },
                 }}
@@ -35,7 +35,7 @@ const CategorySlider = ({ images }: TypeSliderProps) => {
                 className='CategorySwiper'
             >
                 {images.map((item, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={item} virtualIndex={index}>
                         <div className='slideContentWrapper'>
                             <div className='imgBox'>
                                 <CldImage

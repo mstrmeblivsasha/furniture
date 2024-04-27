@@ -1,5 +1,6 @@
 "use client";
 
+// import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { GetDataWithPathname } from "@/fetch/ClientFetch";
 import CategorySlider from "@/components/CategorySlider/CategorySlider";
@@ -8,7 +9,7 @@ import styles from "./CategorySection.module.scss";
 
 const CategorySection = () => {
     const { data, isLoading, error } = GetDataWithPathname();
-    console.log("data", data);
+    // console.log("data", data);
     return (
         <>
             {isLoading ? (
@@ -16,9 +17,17 @@ const CategorySection = () => {
             ) : (
                 <section className={styles.section}>
                     <div className={`container ${styles.container} `}>
-                        <h1 className={styles.title}>
-                            <span>{data.title}</span>
-                        </h1>
+                        <div className={styles.titleBox}>
+                            {/* <Link href='/catalogue' className={styles.linkBack}>
+                                <svg className={styles.icon}>
+                                    <use href='./sprite.svg#arrow-left'></use>
+                                </svg>
+                                Назад
+                            </Link> */}
+                            <h1 className={styles.title}>
+                                <span>{data.title}</span>
+                            </h1>
+                        </div>
                         <div className={styles.innerWrap}>
                             <div className={styles.imgBox}>
                                 <CldImage

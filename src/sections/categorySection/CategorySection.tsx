@@ -1,7 +1,9 @@
 "use client";
 
 // import Link from "next/link";
+import { useContext } from "react";
 import { CldImage } from "next-cloudinary";
+import { SiteContext } from "@/context/SiteContext";
 import { GetDataWithPathname } from "@/fetch/ClientFetch";
 import CategorySlider from "@/components/CategorySlider/CategorySlider";
 
@@ -10,6 +12,7 @@ import styles from "./CategorySection.module.scss";
 const CategorySection = () => {
     const { data, isLoading, error } = GetDataWithPathname();
     // console.log("data", data);
+    const { setModalOpen } = useContext(SiteContext);
     return (
         <>
             {isLoading ? (
@@ -48,7 +51,7 @@ const CategorySection = () => {
                                 <button
                                     type='button'
                                     className={styles.btn}
-                                    onClick={() => console.log("btnClick")}
+                                    onClick={() => setModalOpen(true)}
                                 >
                                     Замовити
                                 </button>

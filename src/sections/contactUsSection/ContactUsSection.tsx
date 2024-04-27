@@ -1,21 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { SiteContext } from "@/context/SiteContext";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import styles from "./ContactUsSection.module.scss";
 
 const ContactUsSection = () => {
-    const [isSubmited, setSubmited] = useState(false);
+    const { isSubmited } = useContext(SiteContext);
     return (
-        <section>
+        <section className={styles.section}>
             <div className={`container ${styles.container} `}>
                 <h2 className={styles.title}>
                     {!isSubmited && <span>Маєте питання?</span>}
                 </h2>
-                <ContactForm
-                    isSubmited={isSubmited}
-                    setSubmited={setSubmited}
-                />
+                <ContactForm />
             </div>
         </section>
     );

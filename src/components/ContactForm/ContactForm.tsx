@@ -1,20 +1,21 @@
 "use client";
 
-import { useEffect, Dispatch, SetStateAction } from "react";
+import { useEffect, useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactsSchema } from "@/zodShemas/contactsShema";
 import { TypeContactsSchema } from "@/zodShemas/contactsShema";
+import { SiteContext } from "@/context/SiteContext";
 import SuccessContent from "./SuccessContent";
 
 import styles from "./ContactForm.module.scss";
 
-type TypeProps = {
-    isSubmited: boolean;
-    setSubmited: Dispatch<SetStateAction<boolean>>;
-};
-
-const ContactForm = ({ isSubmited, setSubmited }: TypeProps) => {
+const ContactForm = () => {
+    const { isSubmited, setSubmited, isModalOpen, setModalOpen } =
+        useContext(SiteContext);
+    const closeModal = () => {
+        setModalOpen(false);
+    };
     const {
         register,
         handleSubmit,
@@ -34,7 +35,7 @@ const ContactForm = ({ isSubmited, setSubmited }: TypeProps) => {
         setSubmited(true);
         console.log("submitData:", data);
         setTimeout(() => {
-            //  if (isModalOpen) closeModal();
+            if (isModalOpen) closeModal();
             setSubmited(false);
         }, 3000);
     };
@@ -42,13 +43,23 @@ const ContactForm = ({ isSubmited, setSubmited }: TypeProps) => {
     return (
         <>
             {isSubmited ? (
-                <SuccessContent setSubmited={setSubmited} />
+                <SuccessContent />
             ) : (
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className={styles.form}
                     noValidate
                 >
+                    {isModalOpen && (
+                        <button
+                            onClick={closeModal}
+                            className={styles.closeBtn}
+                        >
+                            <svg className={styles.iconBtnClose}>
+                                <use href='/sprite.svg#icon-close' />
+                            </svg>
+                        </button>
+                    )}
                     <div className={styles.inputsWrap}>
                         <div className={styles.innerBox}>
                             <div className={styles.errorWrap}>

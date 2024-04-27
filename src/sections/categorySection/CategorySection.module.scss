@@ -3,6 +3,10 @@
 .section {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 70px;
+    @media screen and (min-width: $tablet) {
+        padding-top: 100px;
+    }
 }
 
 .container {

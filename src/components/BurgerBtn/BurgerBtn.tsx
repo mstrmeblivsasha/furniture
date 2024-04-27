@@ -12,13 +12,16 @@ const BurgerBtn = () => {
   useEffect(() => {
     const handleBodyClass = () => {
       const mainEl = document.querySelector("main");
-      if (mainEl) {
-        if (isMobileMenu) {
-          mainEl.classList.add("bluredBody");
-        } else {
-          mainEl.classList.remove("bluredBody");
-        }
+
+      // if (mainEl) {
+      if (isMobileMenu) {
+        mainEl?.classList.add("bluredBody");
+        document.body.style.overflow = "hidden";
+      } else {
+        mainEl?.classList.remove("bluredBody");
+        document.body.style.overflow = "auto";
       }
+      // }
     };
 
     handleBodyClass();
@@ -26,9 +29,9 @@ const BurgerBtn = () => {
     return () => {
       // Видалення обробника подій при видаленні компонента
       const mainEl = document.querySelector("main");
-      if (mainEl) {
-        mainEl.classList.remove("bluredBody");
-      }
+      // if (mainEl) {
+      mainEl?.classList.remove("bluredBody");
+      // }
     };
   }, [isMobileMenu]);
 

@@ -2,8 +2,13 @@ import { NextResponse } from "next/server";
 import { connectToDB } from "@/utils/connectToDB";
 import { Catalogue } from "@/models/catalogueSchema";
 
+type PropsParams = {
+    params: {
+        category: string
+    }
+}
 
-export const GET = async (request, { params }) => {
+export const GET = async (request: Request, { params }: PropsParams) => {
     const { category } = params;
 
     try {
@@ -11,12 +16,12 @@ export const GET = async (request, { params }) => {
 
         const data = await Catalogue.findOne({ category });
         return new NextResponse(JSON.stringify(data), { status: 200 })
-    } catch (error) {
+    } catch (error: any) {
         return new NextResponse(error, { status: 500 })
     }
 }
 
-export const DELETE = async (request, { params }) => {
+export const DELETE = async (request: Request, { params }: PropsParams) => {
     const { category } = params;
 
     try {
@@ -26,13 +31,13 @@ export const DELETE = async (request, { params }) => {
 
         return new NextResponse("Catalogue has been deleted.", { status: 200 })
 
-    } catch (error) {
+    } catch (error: any) {
         return new NextResponse(error, { status: 500 })
     }
 }
 
 
-export const PUT = async (request, { params }) => {
+export const PUT = async (request: Request, { params }: PropsParams) => {
     const { category } = params;
     const incomingData = await request.json();
 
@@ -47,13 +52,13 @@ export const PUT = async (request, { params }) => {
 
         return new NextResponse("Catalogue has been updated", { status: 200 });
 
-    } catch (error) {
+    } catch (error: any) {
         return new NextResponse(error, { status: 500 });
     }
 };
 
 
-export const PATCH = async (request, { params }) => {
+export const PATCH = async (request: Request, { params }: PropsParams) => {
     const { category } = params;
 
     const incomingData = await request.json();
@@ -68,7 +73,7 @@ export const PATCH = async (request, { params }) => {
 
         return new NextResponse("Catalogue has been updated", { status: 200 });
 
-    } catch (error) {
+    } catch (error: any) {
         return new NextResponse(error, { status: 500 });
     }
 };

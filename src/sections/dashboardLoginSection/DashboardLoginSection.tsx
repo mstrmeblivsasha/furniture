@@ -1,5 +1,5 @@
 import { auth } from "@/auth/auth";
-import DashboardLoginForm from "@/components/DashboardLoginForm/DashboardLoginForm"
+import DashboardLoginForm from "@/components/DashboardLoginForm/DashboardLoginForm";
 
 
 const DashboardLoginSection = async () => {

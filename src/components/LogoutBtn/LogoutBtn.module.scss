@@ -12,12 +12,12 @@
 .exitIcon {
     width: 28px;
     height: 28px;
-    stroke: #0807f3;
-    fill: #5680eb;
+    stroke: $exitIconStrokeColor;
+    fill: $exitIconFillColor;
     transition-duration: 250ms;
 }
 
 .exitIcon:hover {
-    fill: #ff2828;
-    stroke: #9f2a2a;
+    stroke: $exitIconHoverStrokeColor;
+    fill: $exitIconHoverFillColor;
 }

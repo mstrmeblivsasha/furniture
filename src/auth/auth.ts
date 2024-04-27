@@ -7,7 +7,7 @@ import { authConfig } from './auth.config'
 
 
 // вынесено в отдельную функцию
-const login = async (credentials) => {
+const login = async (credentials: TypeUser) => {
     try {
         await connectToDB();
         const user = await User.findOne({ email: credentials.email });
@@ -15,7 +15,7 @@ const login = async (credentials) => {
             throw new Error("Wrong credentials")
         }
 
-        const passwordIsCorrect = await bcrypt.compare(credentials.password, user.password);
+        const passwordIsCorrect = bcrypt.compare(credentials.password, user.password);
         if (!passwordIsCorrect) {
             throw new Error("Wrong credentials")
         }
@@ -39,7 +39,7 @@ export const {
                 async authorize(credentials) {
                     try {
                         // login из этого файла(т.е. из auth.js)
-                        const user = await login(credentials);
+                        const user = await login(credentials as TypeUser);
 
                         return user;
                     } catch (error) {

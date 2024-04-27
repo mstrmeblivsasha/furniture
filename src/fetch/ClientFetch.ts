@@ -14,7 +14,8 @@ export const GetDataWithPathname = () => {
     // console.log("pathname", pathname)
     // console.log("changedPathname", changedPathname)
 
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
-    // console.log("fetcher", fetcher)
+    const fetcher = (...args: string[]) =>
+        fetch(...args as Parameters<typeof fetch>).then((res) => res.json());
+
     return useSWR(`/api/${changedPathname}`, fetcher);
 };

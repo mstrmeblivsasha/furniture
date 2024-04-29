@@ -4,8 +4,23 @@ import { handleDeleteCardFromDB } from '@/utils/handleDeleteCardFromDB';
 import { createImagesArrayForDeletingFromCloudinary } from '@/utils/createImagesArrayForDeletingFromCloudinary';
 import styles from './DashboardEditAndDelete.module.scss';
 
+type Props = {
+    data: {
+        category: string
+        title: string
+        subTitle: string
+        description: string
+        image: string
+        sliderTitle: string
+        sliderImages: string[]
+        createdAt: string
+        updatedAt: string
+    }
+    pathname: string
+}
 
-const DashboardEditAndDelete = ({ data, pathname }) => {
+
+const DashboardEditAndDelete = ({ data, pathname }: Props) => {
     // cut /dashboard/ from pathname
     const slicedPathname = pathname.slice(11);
     const url = `/api/${slicedPathname}/${data.category}`;

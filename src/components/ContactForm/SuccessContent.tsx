@@ -1,14 +1,22 @@
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
+import { SiteContext } from "@/context/SiteContext";
 import Image from "next/image";
 import styles from "./ContactForm.module.scss";
 
-type TypeProps = {
-    setSubmited: Dispatch<SetStateAction<boolean>>;
-};
-
-const SuccessContent = ({ setSubmited }: TypeProps) => {
+const SuccessContent = () => {
+    const { isModalOpen, setModalOpen, setSubmited } = useContext(SiteContext);
     return (
         <div className={styles.successWrap}>
+            {isModalOpen && (
+                <button
+                    onClick={() => setModalOpen(false)}
+                    className={styles.closeBtn}
+                >
+                    <svg className={styles.iconBtnClose}>
+                        <use href='/sprite.svg#icon-close' />
+                    </svg>
+                </button>
+            )}
             <div className={styles.successInnerBox}>
                 <h2 className={styles.successTitle}>
                     Вітаю! Ваше повідомлення відправлено мені на пошту! Я
@@ -20,7 +28,10 @@ const SuccessContent = ({ setSubmited }: TypeProps) => {
             </div>
             <button
                 type='button'
-                onClick={() => setSubmited(false)}
+                onClick={() => {
+                    setSubmited(false);
+                    setModalOpen(false);
+                }}
                 className={`${styles.btn} ${styles.btnOk}`}
             >
                 Ок

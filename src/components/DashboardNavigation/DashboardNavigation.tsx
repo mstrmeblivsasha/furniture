@@ -4,10 +4,21 @@ import { usePathname } from "next/navigation";
 import LogoutBtn from '../LogoutBtn/LogoutBtn';
 import styles from './DashboardNavigation.module.scss';
 
+type Props = {
+    handleLogout: any;
+    session?: {
+        user?: {
+            name?: string | null | undefined;
+            email?: string | null | undefined;
+            image?: string | null | undefined;
+        } | undefined
+    } | null;
+};
 
-const DashboardNavigation = ({ handleLogout, session }) => {
+
+const DashboardNavigation = ({ handleLogout, session }: Props) => {
     const pathName = usePathname();
-    const isAdmin = session?.user.email === process.env.NEXT_PUBLIC_MASTER || session?.user.email === process.env.NEXT_PUBLIC_DESIGNER || session?.user.email === process.env.NEXT_PUBLIC_TESTER
+    const isAdmin = session?.user?.email === process.env.NEXT_PUBLIC_MASTER || session?.user?.email === process.env.NEXT_PUBLIC_DESIGNER || session?.user?.email === process.env.NEXT_PUBLIC_TESTER
 
     return (
         <>

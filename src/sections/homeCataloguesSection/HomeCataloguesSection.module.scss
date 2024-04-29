@@ -3,10 +3,6 @@
 .section {
     padding-left: 0;
     padding-right: 0;
-    padding-top: 70px;
-    @media screen and (min-width: $tablet) {
-        padding-top: 100px;
-    }
 }
 
 .container {
@@ -47,4 +43,40 @@
 .title span {
     background: $Secondary50;
     padding: 0 10px;
+}
+
+.linkCatalogue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    width: 280px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: $Primary900;
+    color: $Gray0;
+    margin-top: 16px;
+
+    @media screen and (min-width: $tablet) {
+        width: 432px;
+        margin-top: 20px;
+    }
+    @media screen and (min-width: $laptop) {
+        width: 306px;
+        height: 48px;
+        margin-top: 24px;
+        font-size: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 384px;
+        height: 48px;
+        margin-top: 32px;
+    }
+
+    &:hover,
+    &:focus {
+        scale: 1.02;
+    }
 }

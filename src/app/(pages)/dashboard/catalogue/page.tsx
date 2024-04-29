@@ -4,7 +4,6 @@ import DashboardCatalogueSection from "@/sections/dashboardCatalogueSection/Dash
 const DashboardCataloguePage = () => {
     return (
         <DashboardCatalogueSection />)
-
 }
 
 

@@ -5,7 +5,7 @@
 
 
 // (для удаления фото из массива мобильных фотографий проекта)
-export const handleDeleteImageFromMongoDB = async (data, item) => {
+export const handleDeleteImageFromMongoDB = async (data: TypeCatalogueFromDB, item: string) => {
     const newArr = data.sliderImages.filter((el) => el !== item);
     try {
         await fetch(`/api/catalogue/${data.category}`, {

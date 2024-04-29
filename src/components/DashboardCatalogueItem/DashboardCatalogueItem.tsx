@@ -6,9 +6,22 @@ import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudi
 import { handleDeleteImageFromMongoDB } from '@/utils/handleDeleteImageFromMongoDB';
 import styles from './DashboardCatalogueItem.module.scss'
 
+type Props = {
+    data: {
+        category: string
+        title: string
+        subTitle: string
+        description: string
+        image: string
+        sliderTitle: string
+        sliderImages: string[]
+        createdAt: string
+        updatedAt: string
+    }
+};
 
 
-const DashboardCatalogueItem = ({ data }) => {
+const DashboardCatalogueItem = ({ data }: Props) => {
     const pathname = usePathname();
     const isList = pathname.endsWith("catalogue");
 

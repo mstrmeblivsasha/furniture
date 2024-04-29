@@ -2,41 +2,33 @@
     width: 100%;
     height: 300px;
 
-    /* @media screen and (min-width: 360px) {
-        height: 288px;
-    }
-
     @media screen and (min-width: 768px) {
-        height: 222px;
+        height: 336px;
     }
 
     @media screen and (min-width: 1024px) {
-        height: 438px;
+        height: 323px;
     }
 
     @media screen and (min-width: 1440px) {
-        height: 348px;
-    } */
+        height: 404px;
+    }
 }
 
 .CategorySwiper .swiper-wrapper {
     height: 280px;
 
-    /* @media screen and (min-width: 360px) {
-        height: 264px;
-    }
-
     @media screen and (min-width: 768px) {
-        height: 208px;
+        height: 320px;
     }
 
     @media screen and (min-width: 1024px) {
-        height: 424px;
+        height: 307px;
     }
 
     @media screen and (min-width: 1440px) {
-        height: 336px;
-    } */
+        height: 384px;
+    }
 }
 
 .CategorySwiper .swiper-slide {
@@ -68,7 +60,7 @@
 }
 
 .CategorySwiper .swiper-pagination {
-    bottom: 0px;
+    bottom: -4px;
 }
 
 .CategorySwiper .swiper-pagination-bullet {
@@ -86,6 +78,18 @@
     width: 280px;
     height: 280px;
     margin-bottom: 12px;
+    @media screen and (min-width: 768px) {
+        width: 320px;
+        height: 320px;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 307px;
+        height: 307px;
+    }
+    @media screen and (min-width: 1440px) {
+        width: 384px;
+        height: 384px;
+    }
 }
 
 .img {

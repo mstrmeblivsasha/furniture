@@ -3,7 +3,7 @@ import { connectToDB } from "@/utils/connectToDB";
 import { Catalogue } from '../../../models/catalogueSchema';
 
 
-export const GET = async (request) => {
+export const GET = async (request: Request) => {
     try {
         await connectToDB();
 
@@ -17,7 +17,7 @@ export const GET = async (request) => {
 }
 
 
-export const POST = async (request) => {
+export const POST = async (request: Request) => {
     const body = await request.json();
 
     const newCatalogue = new Catalogue(body);
@@ -27,7 +27,7 @@ export const POST = async (request) => {
         await newCatalogue.save();
 
         return new NextResponse('Catalogue has been created.', { status: 201 });
-    } catch (err) {
-        return new NextResponse(err, { status: 500 });
+    } catch (error: any) {
+        return new NextResponse(error, { status: 500 });
     }
 };

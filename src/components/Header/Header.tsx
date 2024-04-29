@@ -3,7 +3,7 @@
 import { SiteContext } from "@/context/SiteContext";
 import { useWindowResize } from "@/hooks/windowResize";
 import { useContext } from "react";
-import BurgerBtn from "../BurgerBtn/BurgerBtn";
+import BurgerBtn from "../buttons/BurgerBtn/BurgerBtn";
 import Logo from "../Logo/Logo";
 import NavLinks from "../NavLinks/NavLinks";
 import styles from "./Header.module.scss";

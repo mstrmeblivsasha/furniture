@@ -44,11 +44,11 @@ const BurgerBtn = () => {
     >
       {isMobileMenu ? (
         <svg>
-          <use href="./sprite.svg#icon-burgerclose"></use>
+          <use href="/sprite.svg#icon-burgerclose"></use>
         </svg>
       ) : (
         <svg>
-          <use href="./sprite.svg#icon-burger"></use>
+          <use href="/sprite.svg#icon-burger"></use>
         </svg>
       )}
     </button>

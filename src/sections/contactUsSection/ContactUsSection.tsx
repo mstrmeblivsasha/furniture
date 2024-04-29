@@ -6,17 +6,17 @@ import ContactForm from "@/components/ContactForm/ContactForm";
 import styles from "./ContactUsSection.module.scss";
 
 const ContactUsSection = () => {
-    const { isSubmited } = useContext(SiteContext);
-    return (
-        <section className={styles.section}>
-            <div className={`container ${styles.container} `}>
-                <h2 className={styles.title}>
-                    {!isSubmited && <span>Маєте питання?</span>}
-                </h2>
-                <ContactForm />
-            </div>
-        </section>
-    );
+  const { isSubmited } = useContext(SiteContext);
+  return (
+    <section className={styles.section} id="contacts">
+      <div className={`container ${styles.container} `}>
+        <h2 className={styles.title}>
+          {!isSubmited && <span>Маєте питання?</span>}
+        </h2>
+        <ContactForm />
+      </div>
+    </section>
+  );
 };
 
 export default ContactUsSection;

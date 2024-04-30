@@ -27,10 +27,6 @@ $gray50: #f6f6fa;
 $gray0: #ffffff;
 $lightBlue: #1a8cff;
 
-
-
-
-
 // -----------  M A K S  ------
 $loginFormBackgroundColor: #a7a3a3;
 $formButtonHoverBackgroundColor: #a8a7a1;
@@ -60,10 +56,12 @@ $exitIconFillColor: #5680eb;
 $formTitleColor: #808080;
 $exitIconHoverStrokeColor: #9f2a2a;
 
-$gradient: linear-gradient(170deg,
-        $gradientYellow,
-        $gradientCyan,
-        $gradientBlue);
+$gradient: linear-gradient(
+  170deg,
+  $gradientYellow,
+  $gradientCyan,
+  $gradientBlue
+);
 
 // // -----------  M A K S  ------
 // //DashboardCatalogueCreateForm and updateForm

@@ -9,44 +9,44 @@ import "./globals.scss";
 import { SiteProvider } from "@/context/SiteContext";
 
 const raleway = Raleway({
-    subsets: ["cyrillic"],
-    weight: ["400"],
-    variable: "--font-raleway",
+  subsets: ["cyrillic"],
+  weight: ["100", "200", "300", "400", "500"],
+  variable: "--font-raleway",
 });
 const notoSerif = Noto_Serif({
-    subsets: ["cyrillic"],
-    weight: ["300"],
-    variable: "--font-notoSerif",
+  subsets: ["cyrillic"],
+  weight: ["300"],
+  variable: "--font-notoSerif",
 });
 
 const inter = Inter({
-    subsets: ["cyrillic"],
-    weight: ["300"],
-    variable: "--font-inter",
+  subsets: ["cyrillic"],
+  weight: ["300"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-    title: "МайстерМеблів",
-    description: "МайстерМеблів. Новомосковськ, Дніпро",
+  title: "МайстерМеблів",
+  description: "МайстерМеблів. Новомосковськ, Дніпро",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang='uk'>
-            <body
-                className={`${raleway.variable} ${notoSerif.variable} ${inter.variable}`}
-            >
-                <SiteProvider>
-                    <Header />
-                    <main>{children}</main>
-                    <Footer />
-                    <ModalR />
-                </SiteProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="uk">
+      <body
+        className={`${raleway.variable} ${notoSerif.variable} ${inter.variable}`}
+      >
+        <SiteProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ModalR />
+        </SiteProvider>
+      </body>
+    </html>
+  );
 }

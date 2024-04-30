@@ -181,3 +181,34 @@ button {
     background-position: right;
   }
 }
+
+.sectionTitle {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 28px;
+  color: rgba(59, 48, 48, 1);
+  position: relative;
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 62px;
+  }
+
+  & span {
+    background: $Secondary50;
+    padding: 0 12px;
+  }
+
+  &::before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: rgba(59, 48, 48, 1);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+  }
+}

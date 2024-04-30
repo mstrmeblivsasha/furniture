@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
-      {/* <BenefitsSection />
-            <HomeCataloguesSection />
-            <ContactUsSection /> */}
+      <BenefitsSection />
+      <HomeCataloguesSection />
+      <ContactUsSection />
     </>
   );
 }

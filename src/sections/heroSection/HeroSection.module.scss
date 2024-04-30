@@ -23,8 +23,9 @@
   padding-top: 20px;
   padding-bottom: 118px;
   // gap: 205px;
-  @media screen and (min-width: $laptop) {
+  @media screen and (min-width: $tablet) {
     padding-bottom: 224px;
+    background-position: center;
   }
   @media screen and (min-width: $laptop) {
     padding-bottom: 136px;

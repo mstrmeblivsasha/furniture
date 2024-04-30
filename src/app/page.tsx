@@ -6,13 +6,13 @@ import HomeCataloguesSection from "@/sections/homeCataloguesSection/HomeCatalogu
 import ContactUsSection from "@/sections/contactUsSection/ContactUsSection";
 
 export default function Home() {
-    return (
-        <>
-            <HeroSection />
-            <AboutSection />
-            <BenefitsSection />
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+      {/* <BenefitsSection />
             <HomeCataloguesSection />
-            <ContactUsSection />
-        </>
-    );
+            <ContactUsSection /> */}
+    </>
+  );
 }

@@ -1,93 +1,96 @@
 @import "../../app/variables";
 
 .header {
-    height: 70px;
-    background-color: $Gray0;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    position: fixed;
-    z-index: 5;
-    @media screen and (min-width: $tablet) {
-        height: 100px;
-    }
+  height: 70px;
+  background-color: $Gray0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: fixed;
+  z-index: 5;
+  @media screen and (min-width: $tablet) {
+    height: 100px;
+  }
+  @media screen and (min-width: $laptop) {
+    height: 80px;
+  }
 }
 .container {
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .tell {
-    font-family: var(--font-notoSerif);
-    display: none;
-    @media screen and (min-width: $laptop) {
-        display: inline-block;
-        font-size: clamp(12px, 1.7vw, 20px);
-        padding: 8px;
-    }
+  font-family: var(--font-notoSerif);
+  display: none;
+  @media screen and (min-width: $laptop) {
+    display: inline-block;
+    font-size: clamp(12px, 1.7vw, 20px);
+    padding: 8px;
+  }
 }
 
 .logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 8px;
-    &:focus,
-    &:hover {
-        scale: 1.1;
-        transform: translate(-46%, -50%);
-        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-        background-position: right;
-    }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  &:focus,
+  &:hover {
+    scale: 1.1;
+    transform: translate(-46%, -50%);
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    background-position: right;
+  }
 }
 
 .navLinks {
-    position: absolute;
-    flex-direction: column;
-    // gap: 24px;
-    top: 54px;
-    padding: 20px;
-    background-color: $Gray0;
-    overflow: hidden;
-    width: 176px;
+  position: absolute;
+  flex-direction: column;
+  // gap: 24px;
+  top: 54px;
+  padding: 20px;
+  background-color: $Gray0;
+  overflow: hidden;
+  width: 176px;
+  gap: 12px;
+
+  & a {
+    padding: 8px;
+  }
+  @media screen and (min-width: $tablet) {
+    top: 84px;
+    width: 208px;
+    gap: 20px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 24px;
+    width: 308px;
+    gap: 32px;
+    padding: 48px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    background-color: transparent;
+    overflow: auto;
+    width: fit-content;
+    height: fit-content;
+
+    font-size: 20px;
     gap: 12px;
-
-    & a {
-        padding: 8px;
-    }
-    @media screen and (min-width: $tablet) {
-        top: 84px;
-        width: 208px;
-        gap: 20px;
-    }
-    @media screen and (min-width: $laptop) {
-        font-size: 24px;
-        width: 308px;
-        gap: 32px;
-        padding: 48px;
-    }
-
-    @media screen and (min-width: $desktop) {
-        position: static;
-        flex-direction: row;
-        padding: 0;
-        background-color: transparent;
-        overflow: auto;
-        width: fit-content;
-        height: fit-content;
-
-        font-size: 20px;
-        gap: 12px;
-    }
+  }
 }
 
 .navLinksHidden {
-    padding: 0px 20px;
-    height: 0px;
-    @media screen and (min-width: $laptop) {
-        padding: 0px 48px;
-    }
+  padding: 0px 20px;
+  height: 0px;
+  @media screen and (min-width: $laptop) {
+    padding: 0px 48px;
+  }
 }
 
 // @keyframes navLink {

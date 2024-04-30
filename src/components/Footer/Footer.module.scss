@@ -26,6 +26,11 @@
     display: none;
     @media screen and (min-width: $tablet) {
       display: flex;
+      font-size: 16px;
+      gap: 20px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 20px;
     }
   }
 }

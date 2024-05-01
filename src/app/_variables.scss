@@ -6,8 +6,11 @@ $desktop: "1440px";
 $Gray0: #ffffff;
 $Gray600: #5e5e61;
 $Gray900: #131313;
-$Secondary100: #d9cecf;
+
 $Secondary50: #efecec;
+$Secondary100: #d9cecf;
+$Secondary300: rgba(167, 140, 143, 1);
+
 $Primary900: #3b3030;
 
 $Primary900: #3b3030;
@@ -55,6 +58,8 @@ $formLabelColor: #4a45358b;
 $exitIconFillColor: #5680eb;
 $formTitleColor: #808080;
 $exitIconHoverStrokeColor: #9f2a2a;
+
+$boxShadow: -8px -8px 24px rgba(120, 94, 91, 0.2);
 
 $gradient: linear-gradient(
   170deg,

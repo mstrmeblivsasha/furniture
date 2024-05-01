@@ -1,18 +1,26 @@
 "use client";
 
 // import Link from "next/link";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { CldImage } from "next-cloudinary";
 import { SiteContext } from "@/context/SiteContext";
 import { GetDataWithPathname } from "@/fetch/ClientFetch";
 import CategorySlider from "@/components/CategorySlider/CategorySlider";
+import Slider from "@/components/Slider/Slider";
 
 import styles from "./CategorySection.module.scss";
 
 const CategorySection = () => {
     const { data, isLoading, error } = GetDataWithPathname();
-    // console.log("data", data);
     const { setModalOpen } = useContext(SiteContext);
+    const [open, setOpen] = useState(false);
+
+    // console.log("data", data);
+    const srcArray = data?.sliderImages.map((item: string) => ({
+        src: `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/v1713612219/${item}.webp`,
+    }));
+    // console.log("srcArray", srcArray);
+
     return (
         <>
             {isLoading ? (
@@ -23,7 +31,7 @@ const CategorySection = () => {
                         <div className={styles.titleBox}>
                             {/* <Link href='/catalogue' className={styles.linkBack}>
                                 <svg className={styles.icon}>
-                                    <use href='./sprite.svg#arrow-left'></use>
+                                    <use href='/sprite.svg#arrow-left'></use>
                                 </svg>
                                 Назад
                             </Link> */}
@@ -32,7 +40,10 @@ const CategorySection = () => {
                             </h1>
                         </div>
                         <div className={styles.innerWrap}>
-                            <div className={styles.imgBox}>
+                            <div
+                                className={styles.imgBox}
+                                onClick={() => setOpen(true)}
+                            >
                                 <CldImage
                                     src={data.image}
                                     alt='фото сайту'
@@ -64,6 +75,7 @@ const CategorySection = () => {
                             <CategorySlider images={data.sliderImages} />
                         </div>
                     </div>
+                    <Slider open={open} setOpen={setOpen} array={srcArray} />
                 </section>
             )}
         </>

@@ -1,0 +1,30 @@
+@import "../../app/variables";
+
+.section {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: $laptop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
+  }
+  @media screen and (min-width: $laptop) {
+    gap: 24px;
+  }
+}

@@ -52,7 +52,7 @@
     // aspect-ratio: 1 / 1;
     box-shadow: $boxShadow;
     border: 1px solid $Primary900;
-    padding: 20px 12px;
+    padding: 24px 12px;
 
     font-weight: 400;
 
@@ -60,10 +60,6 @@
       font-size: 22px;
       line-height: 1.4;
       margin-bottom: 12px;
-    }
-    & p {
-      font-size: 16px;
-      line-height: 1.6;
     }
   }
   @media screen and (min-width: $tablet) {
@@ -74,14 +70,11 @@
     & li {
       // width: 320px;
       width: calc(48% - 8px);
-      height: 324px;
-      padding: 36px 20px 12px;
+      height: 356px;
+      padding: 48px 20px 12px;
 
       & h3 {
         font-size: 32px;
-      }
-      & p {
-        font-size: clamp(16px, 2vw, 20px);
       }
     }
   }
@@ -92,10 +85,6 @@
     & li {
       padding: 52px 36px;
       height: calc(528px - 16vw);
-
-      & p {
-        font-size: 20px;
-      }
     }
   }
 
@@ -105,7 +94,7 @@
 
     & li {
       padding: 32px 104px;
-      // width: 588px;
+
       height: 372px;
       & h3 {
         font-size: 38px;
@@ -116,4 +105,56 @@
 
 .itemNumber {
   position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-2%, -50%);
+
+  width: 48px;
+  height: 48px;
+
+  background-color: $Secondary300;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & p {
+    font-size: 40px;
+    color: $gray0;
+    transform: translate(8%, -12%);
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 96px;
+    height: 96px;
+    & p {
+      font-size: 64px;
+    }
+  }
+  @media screen and (min-width: $laptop) {
+    width: 84px;
+    height: 84px;
+    & p {
+      font-size: 56px;
+    }
+  }
+  @media screen and (min-width: $laptop) {
+    width: 120px;
+    height: 120px;
+    & p {
+      font-size: 96px;
+    }
+  }
+}
+
+.itemText {
+  font-size: 16px;
+  line-height: 1.6;
+  @media screen and (min-width: $tablet) {
+    font-size: clamp(16px, 2vw, 20px);
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 20px;
+  }
 }

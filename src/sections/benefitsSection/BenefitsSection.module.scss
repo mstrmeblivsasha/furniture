@@ -1,7 +1,7 @@
 @import "../../app/variables";
 
 .section {
-  padding-top: 16px;
+  padding-top: 24px;
   padding-bottom: 16px;
   @media screen and (min-width: $tablet) {
     padding-top: 20px;
@@ -20,11 +20,100 @@
 .container {
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 40px;
   @media screen and (min-width: $tablet) {
-    gap: 16px;
+    gap: 64px;
   }
   @media screen and (min-width: $laptop) {
-    gap: 24px;
+    gap: 62px;
   }
+  @media screen and (min-width: $desktop) {
+    gap: 120px;
+  }
+}
+
+.benefitsList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+
+  & li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    width: 280px;
+    height: 280px;
+    // aspect-ratio: 1 / 1;
+    box-shadow: $boxShadow;
+    border: 1px solid $Primary900;
+    padding: 20px 12px;
+
+    font-weight: 400;
+
+    & h3 {
+      font-size: 22px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    & p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+    column-gap: 16px;
+    row-gap: 64px;
+
+    & li {
+      // width: 320px;
+      width: calc(48% - 8px);
+      height: 324px;
+      padding: 36px 20px 12px;
+
+      & h3 {
+        font-size: 32px;
+      }
+      & p {
+        font-size: clamp(16px, 2vw, 20px);
+      }
+    }
+  }
+  @media screen and (min-width: $laptop) {
+    column-gap: 20px;
+    row-gap: 70px;
+
+    & li {
+      padding: 52px 36px;
+      height: calc(528px - 16vw);
+
+      & p {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    column-gap: 24px;
+    row-gap: 84px;
+
+    & li {
+      padding: 32px 104px;
+      // width: 588px;
+      height: 372px;
+      & h3 {
+        font-size: 38px;
+      }
+    }
+  }
+}
+
+.itemNumber {
+  position: absolute;
 }

@@ -19,7 +19,7 @@ const NavLinks = ({ className }: navProps) => {
   return (
     <nav className={`${styles.nav} ${className}`}>
       {navlinks.map((el: elProps) => (
-        <Link key={el.id} href={el.href} className="hoverLink">
+        <Link key={el.id} href={el.href} className={`hoverLink ${styles.link}`}>
           {el.title}
         </Link>
       ))}

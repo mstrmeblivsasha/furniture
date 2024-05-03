@@ -1,5 +1,14 @@
 @import "../../app/variables";
 
+.section {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 70px;
+    @media screen and (min-width: $tablet) {
+        padding-top: 100px;
+    }
+}
+
 .container {
     width: 100%;
     display: flex;
@@ -27,9 +36,11 @@
     color: rgba(59, 48, 48, 1);
     @media screen and (min-width: $tablet) {
         font-size: 48px;
+        margin: 20px 0 70px;
     }
     @media screen and (min-width: $laptop) {
         font-size: 62px;
+        margin: 25px 0 75px;
     }
 }
 

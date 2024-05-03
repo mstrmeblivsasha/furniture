@@ -1,22 +1,23 @@
 "use client";
 
-// import { useSiteContext } from "@/context/SiteContext";
+import OrderBtn from "@/components/buttons/OrderBtn/OrderBtn";
+import { SiteContext } from "@/context/SiteContext";
+import { useContext } from "react";
 import styles from "./HeroSection.module.scss";
 
 const HeroSection = () => {
-  // const { name, setName } = useSiteContext();
+  const { setModalOpen } = useContext(SiteContext);
   return (
-    <section>
+    <section id="/" className={styles.section}>
       <div className={`container ${styles.container} `}>
-        <h1>Hero start</h1>
-        {/* {name}
-        <button
-          onClick={() => {
-            name === "Vika" ? setName("Natala") : setName("Vika");
-          }}
-        >
-          setName
-        </button> */}
+        <h1 className={styles.heroTitle}>Меблі, які розкажуть Вашу історію</h1>
+
+        <OrderBtn
+          type="button"
+          title="Замовити"
+          className={styles.btn}
+          onClick={() => setModalOpen(true)}
+        />
       </div>
     </section>
   );

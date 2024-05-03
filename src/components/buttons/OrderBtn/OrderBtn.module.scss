@@ -1,0 +1,29 @@
+@import "../../../app/variables";
+
+.btn {
+  width: 100%;
+  max-width: 432px;
+  height: 42px;
+  background-color: $Primary900;
+  outline: none;
+  border: none;
+  border-radius: 16px;
+  color: $gray0;
+  font-family: var(--font-raleway);
+  font-weight: 300;
+  font-size: 16px;
+
+  @media screen and (min-width: $laptop) {
+    width: 306px;
+    height: 48px;
+    font-size: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 384px;
+  }
+
+  &:focus,
+  &:hover {
+    scale: 0.98;
+  }
+}

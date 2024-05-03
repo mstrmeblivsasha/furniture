@@ -1,125 +1,203 @@
 @import "../../app/variables";
 
+.section {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 70px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+  }
+}
+
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $Secondary50;
-    padding: 16px;
-    @media screen and (min-width: $tablet) {
-        padding: 20px;
-    }
-    @media screen and (min-width: $laptop) {
-        padding: 40px;
-    }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $Secondary50;
+  padding: 16px;
+}
+
+.titleBox {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  fill: $Primary900;
+  @media screen and (min-width: $tablet) {
+    width: 28px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 32px;
+  }
+}
+
+.linkBack {
+  position: absolute;
+  top: 3px;
+  display: flex;
+  padding: 5px;
+  background-color: $Secondary50;
 }
 
 .title {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-    line-height: 0.1em;
-    margin: 16px 0 50px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 16px 0 50px;
 
-    font-weight: 400;
-    font-size: 28px;
-    color: rgba(59, 48, 48, 1);
-    @media screen and (min-width: $tablet) {
-        font-size: 48px;
-    }
-    @media screen and (min-width: $laptop) {
-        font-size: 62px;
-    }
+  font-weight: 400;
+  font-size: 28px;
+  color: rgba(59, 48, 48, 1);
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+    margin: 25px 0 70px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 62px;
+    margin: 35px 0 75px;
+  }
 }
 
 .title span {
-    background: $Secondary50;
-    padding: 0 10px;
+  background: $Secondary50;
+  padding: 0 10px;
+}
+
+.innerWrap {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $laptop) {
+    flex-direction: row-reverse;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 961px;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 1200px;
+  }
 }
 
 .imgBox {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    margin-bottom: 12px;
-    // @media screen and (min-width: $tablet) {
-    //     width: 318px;
-    //     height: 320px;
-    // }
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-bottom: 12px;
+  @media screen and (min-width: $tablet) {
+    width: 656px;
+    height: 224px;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 470px;
+    height: 354px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 690px;
+    height: 520px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .descriptionBox {
-    width: 280px;
-    margin-bottom: 12px;
+  width: 280px;
+  margin-bottom: 12px;
+  @media screen and (min-width: $tablet) {
+    width: 432px;
+    height: 294px;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 470px;
+    height: 386px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 496px;
+    height: 520px;
+  }
 }
 
 .subTitle {
-    // font-family: "Raleway";
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: $Primary900;
-    margin-bottom: 4px;
-    // @media screen and (min-width: $tablet) {
-    //     font-size: 20px;
-    // }
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $Primary900;
+  margin-bottom: 4px;
+  @media screen and (min-width: $laptop) {
+    font-size: 32px;
+  }
 }
 
 .description {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: $Primary900;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: $Primary900;
+  @media screen and (min-width: $laptop) {
+    font-size: 20px;
+  }
 }
+// .btn,
+#btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  width: 100%;
+  min-width: 100%;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: $Primary900;
+  color: $Gray0;
+  margin-top: 12px;
 
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    width: 100%;
-    height: 42px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    background-color: $Primary900;
-    color: $Gray0;
-    margin-top: 12px;
-
-    // @media screen and (min-width: $tablet) {
-    //     width: 432px;
-    //     margin-bottom: 0;
-    //     margin-right: auto;
-    //     margin-left: auto;
-    // }
-    // @media screen and (min-width: $laptop) {
-    //     width: 384px;
-    //     height: 48px;
-    // }
-
-    &:hover,
-    &:focus {
-        scale: 1.02;
-    }
+  &:hover,
+  &:focus {
+    scale: 1.02;
+  }
 }
 
 .sliderBox {
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+    width: 656px;
+    height: 376px;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 961px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 1200px;
+  }
 }
 
 .sliderTitle {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: $Primary900;
-    margin-bottom: 12px;
-    text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $Primary900;
+  margin-bottom: 12px;
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 24px;
+  }
 }

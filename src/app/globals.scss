@@ -22,6 +22,7 @@ body {
   color: $Gray900;
   font-family: var(--font-raleway);
   font-style: normal;
+  background-color: $Secondary50;
 }
 
 .bluredBody {
@@ -38,6 +39,16 @@ footer {
   @media screen and (min-width: $tablet) {
     padding-left: 56px;
     padding-right: 56px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 
@@ -129,12 +140,10 @@ button {
 .container {
   width: 100%;
   height: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  // align-items: center;
-  // justify-content: center;
 }
 
 .active {
@@ -150,8 +159,6 @@ button {
     background-image: linear-gradient(135deg, #5b4947, #c19b97);
     background-size: 200%;
     background-position: left;
-
-    border-radius: 4px;
     color: $Gray0;
   }
 
@@ -161,20 +168,47 @@ button {
   }
 }
 
-.hoverLink {
-
-  &:focus,
-  &:hover {
-    background-image: linear-gradient(135deg, #5b4947, #c19b97);
-    background-size: 200%;
-    background-position: left;
-
-    border-radius: 4px;
-    color: $Gray0;
-  }
+.activeLink {
+  background-image: linear-gradient(135deg, #5b4947, #c19b97);
+  background-size: 200%;
+  background-position: left;
+  color: $Gray0;
 
   &:target,
   &:active {
     background-position: right;
+  }
+}
+
+.sectionTitle {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 28px;
+  color: rgba(59, 48, 48, 1);
+  position: relative;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 62px;
+  }
+
+  & span {
+    background: $Secondary50;
+    padding: 0 12px;
+  }
+
+  &::before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: rgba(59, 48, 48, 1);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
   }
 }

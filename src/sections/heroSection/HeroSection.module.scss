@@ -1,9 +1,70 @@
 @import "../../app/variables";
 
+.section {
+  height: 100vh;
+  min-height: 100vh;
+  padding-top: 70px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+  }
+  @media screen and (min-width: $laptop) {
+    padding-top: 80px;
+  }
+}
+
 .container {
-  background-color: aqua;
-  width: 100%;
   flex-direction: column;
-  //   justify-content: center;
-  //   height: 300px;
+  justify-content: space-between;
+
+  background-image: url("/images/HeroBg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 4% 0%;
+  padding-top: 20px;
+  padding-bottom: 118px;
+  // gap: 205px;
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 224px;
+    background-position: center;
+  }
+  @media screen and (min-width: $laptop) {
+    padding-bottom: 136px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 132px;
+  }
+}
+
+.heroTitle {
+  // background-color: red;
+  padding: 4px 0px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  font-size: 32px;
+  color: $gray0;
+  font-weight: 300;
+  @media screen and (min-width: $tablet) {
+    width: 614px;
+    font-size: 60px;
+    margin-top: 40px;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 780px;
+    font-size: 76px;
+    margin-top: 32px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-top: 40px;
+  }
+  // & h1 {
+  //   font-size: 32px;
+  //   color: $gray0;
+  //   font-weight: 300;
+  //   max-width: 200px;
+  // }
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
 }

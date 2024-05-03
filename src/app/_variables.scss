@@ -6,8 +6,11 @@ $desktop: "1440px";
 $Gray0: #ffffff;
 $Gray600: #5e5e61;
 $Gray900: #131313;
-$Secondary100: #d9cecf;
+
 $Secondary50: #efecec;
+$Secondary100: #d9cecf;
+$Secondary300: rgba(167, 140, 143, 1);
+
 $Primary900: #3b3030;
 
 $Primary900: #3b3030;
@@ -26,10 +29,6 @@ $gray100: #ececf0;
 $gray50: #f6f6fa;
 $gray0: #ffffff;
 $lightBlue: #1a8cff;
-
-
-
-
 
 // -----------  M A K S  ------
 $loginFormBackgroundColor: #a7a3a3;
@@ -60,10 +59,14 @@ $exitIconFillColor: #5680eb;
 $formTitleColor: #808080;
 $exitIconHoverStrokeColor: #9f2a2a;
 
-$gradient: linear-gradient(170deg,
-        $gradientYellow,
-        $gradientCyan,
-        $gradientBlue);
+$boxShadow: -8px -8px 24px rgba(120, 94, 91, 0.2);
+
+$gradient: linear-gradient(
+  170deg,
+  $gradientYellow,
+  $gradientCyan,
+  $gradientBlue
+);
 
 // // -----------  M A K S  ------
 // //DashboardCatalogueCreateForm and updateForm

@@ -3,13 +3,14 @@ import type { Metadata } from "next";
 import { Raleway, Noto_Serif, Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import ModalR from "@/components/Modal/Modal";
 
 import "./globals.scss";
 import { SiteProvider } from "@/context/SiteContext";
 
 const raleway = Raleway({
   subsets: ["cyrillic"],
-  weight: ["400"],
+  weight: ["100", "200", "300", "400", "500"],
   variable: "--font-raleway",
 });
 const notoSerif = Noto_Serif({
@@ -43,6 +44,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <ModalR />
         </SiteProvider>
       </body>
     </html>

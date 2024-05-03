@@ -6,9 +6,12 @@
   padding-top: 16px;
   padding-bottom: 16px;
   position: fixed;
-  z-index: 100;
+  z-index: 5;
   @media screen and (min-width: $tablet) {
     height: 100px;
+  }
+  @media screen and (min-width: $laptop) {
+    height: 80px;
   }
 }
 .container {
@@ -66,6 +69,7 @@
     width: 308px;
     gap: 32px;
     padding: 48px;
+    top: 64px;
   }
 
   @media screen and (min-width: $desktop) {

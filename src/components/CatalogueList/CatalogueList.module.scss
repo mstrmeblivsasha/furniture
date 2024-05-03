@@ -11,6 +11,16 @@
         row-gap: 16px;
         column-gap: 16px;
     }
+    @media screen and (min-width: $laptop) {
+        width: 960px;
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 1200px;
+        row-gap: 24px;
+        column-gap: 24px;
+    }
 }
 
 .imgBox {
@@ -20,6 +30,14 @@
     @media screen and (min-width: $tablet) {
         width: 318px;
         height: 320px;
+    }
+    @media screen and (min-width: $laptop) {
+        width: 468px;
+        height: 390px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 586px;
+        height: 480px;
     }
 }
 
@@ -42,6 +60,14 @@
         width: 320px;
         height: 388px;
     }
+    @media screen and (min-width: $laptop) {
+        width: 470px;
+        height: 470px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 588px;
+        height: 588px;
+    }
 }
 
 .subtitleBox {
@@ -60,6 +86,9 @@
     @media screen and (min-width: $tablet) {
         font-size: 20px;
     }
+    @media screen and (min-width: $laptop) {
+        font-size: 24px;
+    }
 }
 
 .icon {
@@ -69,5 +98,8 @@
     fill: $Primary900;
     @media screen and (min-width: $tablet) {
         width: 28px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 32px;
     }
 }

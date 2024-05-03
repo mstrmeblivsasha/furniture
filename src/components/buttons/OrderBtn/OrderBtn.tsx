@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./OrderBtn.module.scss";
 
 type OrderBtnTypes = {
-  type: any;
+  type?: any;
   className?: string;
   onClick?: () => void;
   title?: string;

@@ -21,4 +21,9 @@
   @media screen and (min-width: $desktop) {
     width: 384px;
   }
+
+  &:focus,
+  &:hover {
+    scale: 0.98;
+  }
 }

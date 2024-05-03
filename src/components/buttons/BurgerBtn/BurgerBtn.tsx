@@ -3,17 +3,14 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./BurgerBtn.module.scss";
 import { SiteContext } from "@/context/SiteContext";
-// import { useWindowResize } from "@/hooks/windowResize";
 
 const BurgerBtn = () => {
   const { isMobileMenu, setIsMobileMenu } = useContext(SiteContext);
-  // const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
 
   useEffect(() => {
     const handleBodyClass = () => {
       const mainEl = document.querySelector("main");
 
-      // if (mainEl) {
       if (isMobileMenu) {
         mainEl?.classList.add("bluredBody");
         document.body.style.overflow = "hidden";
@@ -21,7 +18,6 @@ const BurgerBtn = () => {
         mainEl?.classList.remove("bluredBody");
         document.body.style.overflow = "auto";
       }
-      // }
     };
 
     handleBodyClass();

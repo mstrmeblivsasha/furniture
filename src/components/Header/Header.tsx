@@ -2,18 +2,20 @@
 
 import { SiteContext } from "@/context/SiteContext";
 import { useWindowResize } from "@/hooks/windowResize";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import BurgerBtn from "../buttons/BurgerBtn/BurgerBtn";
 import Logo from "../Logo/Logo";
 import NavLinks from "../NavLinks/NavLinks";
 import styles from "./Header.module.scss";
 
-type NavLinksStylesFunction = () => string | undefined;
+type NavLinksStylesFunction = () => string;
+type clickType = {
+  click: () => {};
+};
 
 const Header = () => {
-  const { isMobileMenu } = useContext(SiteContext);
-  // console.log(isMobileMenu);
-  const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
+  const { isMobileMenu, setIsMobileMenu } = useContext(SiteContext);
+  const { isMobile, isTablet, isDesktop } = useWindowResize();
 
   const navlinksStyles: NavLinksStylesFunction = () => {
     if (!isDesktop && isMobileMenu) {
@@ -24,6 +26,23 @@ const Header = () => {
       return `${styles.navLinks}`;
     }
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (!target.className.includes("navLinks")) {
+      setIsMobileMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobileMenu) {
+      document?.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document?.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMobileMenu]);
 
   return (
     <header className={styles.header}>
@@ -37,7 +56,12 @@ const Header = () => {
 
         <Logo className={`${styles.logo} hoverLink`} />
 
-        <NavLinks className={navlinksStyles()} />
+        <NavLinks
+          className={navlinksStyles()}
+          onClick={() => {
+            setIsMobileMenu(false);
+          }}
+        />
       </div>
     </header>
   );

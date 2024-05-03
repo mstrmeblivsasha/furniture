@@ -18,10 +18,11 @@ type Props = {
         createdAt: string
         updatedAt: string
     }
+    mutate: any
 };
 
 
-const DashboardCatalogueItem = ({ data }: Props) => {
+const DashboardCatalogueItem = ({ data, mutate }: Props) => {
     const pathname = usePathname();
     const isList = pathname.endsWith("catalogue");
 
@@ -58,7 +59,7 @@ const DashboardCatalogueItem = ({ data }: Props) => {
                                     className={styles.deleteIcon}
                                     onClick={async () => {
                                         handleDeleteImgFromCloudinary(item);
-                                        handleDeleteImageFromMongoDB(data, item);
+                                        handleDeleteImageFromMongoDB(data, item, mutate);
                                         console.log(`Фото ${item} видалено з Cloudinary та БД`);
                                     }}
                                 >
@@ -70,7 +71,7 @@ const DashboardCatalogueItem = ({ data }: Props) => {
                 })}
             </div>
 
-            {isList && <DashboardEditAndDelete data={data} pathname={pathname} />}
+            {isList && <DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />}
         </div>
     );
 }

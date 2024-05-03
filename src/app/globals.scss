@@ -23,6 +23,7 @@ body {
   font-family: var(--font-raleway);
   font-style: normal;
 }
+
 .bluredBody {
   filter: blur(2px) brightness(0.8) hue-rotate(15deg);
 }
@@ -33,6 +34,7 @@ footer {
   max-width: inherit;
   padding-left: 20px;
   padding-right: 20px;
+
   @media screen and (min-width: $tablet) {
     padding-left: 56px;
     padding-right: 56px;
@@ -142,6 +144,7 @@ button {
 }
 
 .hoverLink {
+
   &:focus,
   &:hover {
     background-image: linear-gradient(135deg, #5b4947, #c19b97);
@@ -159,6 +162,7 @@ button {
 }
 
 .hoverLink {
+
   &:focus,
   &:hover {
     background-image: linear-gradient(135deg, #5b4947, #c19b97);

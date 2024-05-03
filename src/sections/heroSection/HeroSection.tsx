@@ -13,6 +13,7 @@ const HeroSection = () => {
         <h1 className={styles.heroTitle}>Меблі, які розкажуть Вашу історію</h1>
 
         <OrderBtn
+          type="button"
           title="Замовити"
           className={styles.btn}
           onClick={() => setModalOpen(true)}

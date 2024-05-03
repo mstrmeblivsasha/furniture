@@ -2,7 +2,7 @@
 
 import { SiteContext } from "@/context/SiteContext";
 import { useWindowResize } from "@/hooks/windowResize";
-import { useContext, useEffect, useRef } from "react";
+import { useCallback, useContext, useEffect, useRef } from "react";
 import BurgerBtn from "../buttons/BurgerBtn/BurgerBtn";
 import Logo from "../Logo/Logo";
 import NavLinks from "../NavLinks/NavLinks";
@@ -27,12 +27,32 @@ const Header = () => {
     }
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as HTMLElement;
-    if (!target.className.includes("navLinks")) {
-      setIsMobileMenu(false);
-    }
-  };
+  // const navlinksStyles: NavLinksStylesFunction = useCallback(() => {
+  //   if (!isDesktop && isMobileMenu) {
+  //     return `${styles.navLinks}`;
+  //   } else if (!isDesktop && !isMobileMenu) {
+  //     return `${styles.navLinks} ${styles.navLinksHidden}`;
+  //   } else {
+  //     return `${styles.navLinks}`;
+  //   }
+  // }, [isDesktop, isMobileMenu]);
+
+  // const handleClickOutside = (event: MouseEvent) => {
+  //   const target = event.target as HTMLElement;
+  //   if (!target.className.includes("navLinks")) {
+  //     setIsMobileMenu(false);
+  //   }
+  // };
+
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.className.includes("navLinks")) {
+        setIsMobileMenu(false);
+      }
+    },
+    [setIsMobileMenu]
+  );
 
   useEffect(() => {
     if (isMobileMenu) {
@@ -42,7 +62,7 @@ const Header = () => {
     return () => {
       document?.removeEventListener("click", handleClickOutside);
     };
-  }, [isMobileMenu]);
+  }, [isMobileMenu, handleClickOutside]);
 
   return (
     <header className={styles.header}>

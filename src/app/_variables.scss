@@ -3,31 +3,43 @@ $tablet: "768px";
 $laptop: "1024px";
 $desktop: "1440px";
 
-$Gray0: #ffffff;
-$Gray600: #5e5e61;
-$Gray900: #131313;
+$gray900: #131313;
+$gray800: #333333;
+$gray700: #515151;
+$gray600: #5E5E61;
+$gray500: #646464;
+$gray400: #ACACAC;
+$gray300: #D1D1D1;
+$gray200: #E3E3E3;
+$gray100: #EEEEEE;
+$gray50: #F7F7F7;
+$gray0: #FFFFFF;
 
-$Secondary50: #efecec;
-$Secondary100: #d9cecf;
-$Secondary300: rgba(167, 140, 143, 1);
+$primary900: #3B3030;
+$primary800: #4B3D3C;
+$primary700: #5B4947;
+$primary600: #6C5552;
+$primary500: #785E5B;
+$primary400: #8A7774;
+$primary300: #9C918F;
+$primary200: #B3B2B1;
+$primary100: #D1D1D1;
+$primary50: #EDEDED;
 
-$Primary900: #3b3030;
+$secondary300: #A78C8F;
+$secondary200: #BFADB0;
+$secondary100: #D9CECF;
+$secondary50: #EFECEC;
 
-$Primary900: #3b3030;
+$alertError: #8A0000;
+$alertWarning: #FFC83A;
+$alertSuccess: #005C25;
+
+
+
 
 // $transitionDuration: 250ms;
 
-$gray900: #0d0d11;
-$gray800: #2e2e31;
-$gray700: #4b4b4e;
-$gray600: #5e5e61;
-$gray500: #858588;
-$gray400: #a6a6aa;
-$gray300: #cbcbcf;
-$gray200: #dfdfe3;
-$gray100: #ececf0;
-$gray50: #f6f6fa;
-$gray0: #ffffff;
 $lightBlue: #1a8cff;
 
 // -----------  M A K S  ------
@@ -61,14 +73,14 @@ $exitIconHoverStrokeColor: #9f2a2a;
 
 $boxShadow: -8px -8px 24px rgba(120, 94, 91, 0.2);
 
-$gradient: linear-gradient(
-  170deg,
-  $gradientYellow,
-  $gradientCyan,
-  $gradientBlue
-);
+$gradient: linear-gradient(170deg,
+    $gradientYellow,
+    $gradientCyan,
+    $gradientBlue);
 
-// // -----------  M A K S  ------
+
+
+
 // //DashboardCatalogueCreateForm and updateForm
 // $formButtonHoverBackgroundColor: #a8a7a1;
 // $uploadBtnBackgroundColor: #cac9c3;

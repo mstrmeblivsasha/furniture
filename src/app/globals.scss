@@ -19,10 +19,10 @@ html {
 
 body {
   min-height: 100vh;
-  color: $Gray900;
+  color: $gray900;
   font-family: var(--font-raleway);
   font-style: normal;
-  background-color: $Secondary50;
+  background-color: $secondary50;
 }
 
 .bluredBody {
@@ -159,7 +159,7 @@ button {
     background-image: linear-gradient(135deg, #5b4947, #c19b97);
     background-size: 200%;
     background-position: left;
-    color: $Gray0;
+    color: $gray0;
   }
 
   &:target,
@@ -172,7 +172,7 @@ button {
   background-image: linear-gradient(135deg, #5b4947, #c19b97);
   background-size: 200%;
   background-position: left;
-  color: $Gray0;
+  color: $gray0;
 
   &:target,
   &:active {
@@ -197,7 +197,7 @@ button {
   }
 
   & span {
-    background: $Secondary50;
+    background: $secondary50;
     padding: 0 12px;
   }
 

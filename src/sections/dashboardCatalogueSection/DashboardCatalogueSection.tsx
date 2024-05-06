@@ -1,14 +1,14 @@
 'use client'
 import DashboardCatalogueItem from '@/components/DashboardCatalogueItem/DashboardCatalogueItem'
 import DashboardCatalogueCreateForm from '@/components/DashboardCatalogueCreateForm/DashboardCatalogueCreateForm'
+import Loader from '@/components/Loader/Loader'
 import { GetDataWithPathname } from "@/fetch/ClientFetch"
 import styles from './DashboardCatalogueSection.module.scss'
 
 
 const DashboardCatalogueSection = () => {
 
-    const { data, isLoading } = GetDataWithPathname()
-    console.log('data', data)
+    const { data, isLoading, mutate } = GetDataWithPathname()
 
     let sortedByUpdateData: TypeCatalogueFromDB[] = [];
 
@@ -24,13 +24,14 @@ const DashboardCatalogueSection = () => {
     return (
         <>
             {isLoading ?
-                (<p>Loading...</p>)
+                (<Loader />)
                 : (<div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map((item, index) => { return (<DashboardCatalogueItem key={index} data={item} />) })}
+                        {sortedByUpdateData.map((item, index) => { return (<DashboardCatalogueItem key={index} data={item} mutate={mutate} />) })}
                     </div>
-                    <DashboardCatalogueCreateForm />
-                </div>)}</>
+                    <DashboardCatalogueCreateForm mutate={mutate} />
+                </div>)}
+        </>
     )
 }
 

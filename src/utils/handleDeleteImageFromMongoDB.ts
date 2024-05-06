@@ -5,7 +5,7 @@
 
 
 // (для удаления фото из массива мобильных фотографий проекта)
-export const handleDeleteImageFromMongoDB = async (data: TypeCatalogueFromDB, item: string) => {
+export const handleDeleteImageFromMongoDB = async (data: TypeCatalogueFromDB, item: string, mutate: any) => {
     const newArr = data.sliderImages.filter((el) => el !== item);
     try {
         await fetch(`/api/catalogue/${data.category}`, {
@@ -14,6 +14,8 @@ export const handleDeleteImageFromMongoDB = async (data: TypeCatalogueFromDB, it
                 sliderImages: newArr,
             }),
         });
+        // автоматично обновлює строрінку при зміні кількості карточок
+        mutate();
 
     } catch (error) {
         console.log(error);

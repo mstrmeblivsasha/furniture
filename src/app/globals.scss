@@ -19,11 +19,12 @@ html {
 
 body {
   min-height: 100vh;
-  color: $Gray900;
+  color: $gray900;
   font-family: var(--font-raleway);
   font-style: normal;
-  background-color: $Secondary50;
+  background-color: $secondary50;
 }
+
 .bluredBody {
   filter: blur(2px) brightness(0.8) hue-rotate(15deg);
 }
@@ -34,14 +35,17 @@ footer {
   max-width: inherit;
   padding-left: 20px;
   padding-right: 20px;
+
   @media screen and (min-width: $tablet) {
     padding-left: 56px;
     padding-right: 56px;
   }
+
   @media screen and (min-width: $laptop) {
     padding-left: 32px;
     padding-right: 32px;
   }
+
   @media screen and (min-width: $desktop) {
     padding-left: 120px;
     padding-right: 120px;
@@ -149,12 +153,13 @@ button {
 }
 
 .hoverLink {
+
   &:focus,
   &:hover {
     background-image: linear-gradient(135deg, #5b4947, #c19b97);
     background-size: 200%;
     background-position: left;
-    color: $Gray0;
+    color: $gray0;
   }
 
   &:target,
@@ -162,11 +167,12 @@ button {
     background-position: right;
   }
 }
+
 .activeLink {
   background-image: linear-gradient(135deg, #5b4947, #c19b97);
   background-size: 200%;
   background-position: left;
-  color: $Gray0;
+  color: $gray0;
 
   &:target,
   &:active {
@@ -181,15 +187,17 @@ button {
   font-size: 28px;
   color: rgba(59, 48, 48, 1);
   position: relative;
+
   @media screen and (min-width: $tablet) {
     font-size: 48px;
   }
+
   @media screen and (min-width: $laptop) {
     font-size: 62px;
   }
 
   & span {
-    background: $Secondary50;
+    background: $secondary50;
     padding: 0 12px;
   }
 

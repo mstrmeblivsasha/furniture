@@ -1,7 +1,7 @@
 @import "../../app/variables";
 
 .footer {
-  background-color: $Primary900;
+  background-color: $primary900;
   padding-top: 16px;
   color: $gray0;
 }
@@ -14,9 +14,11 @@
 
   & .logo {
     font-size: 24px;
+
     @media screen and (min-width: $tablet) and (max-width: 1023px) {
       font-size: 20px;
     }
+
     @media screen and (min-width: $desktop) {
       font-size: 32px;
     }
@@ -24,11 +26,13 @@
 
   & .footerNavLinks {
     display: none;
+
     @media screen and (min-width: $tablet) {
       display: flex;
       font-size: 16px;
       gap: 20px;
     }
+
     @media screen and (min-width: $tablet) {
       font-size: 20px;
     }
@@ -40,6 +44,7 @@
   flex-direction: column;
   gap: 16px;
   width: 100%;
+
   @media screen and (min-width: $tablet) {
     flex-direction: row;
     justify-content: space-between;

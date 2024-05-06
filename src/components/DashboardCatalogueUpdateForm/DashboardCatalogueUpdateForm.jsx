@@ -7,7 +7,7 @@ import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudi
 import styles from './DashboardCatalogueUpdateForm.module.scss'
 
 
-const DashboardCatalogueUpdateForm = ({ data }) => {
+const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
     const {
         category,
         title,
@@ -64,7 +64,7 @@ const DashboardCatalogueUpdateForm = ({ data }) => {
                 body: JSON.stringify(updatedData),
             });
             // автоматично обновлює строрінку при зміні кількості карточок
-            // mutate();
+            mutate();
 
             console.log("Information updated to DB");
         } catch (err) {

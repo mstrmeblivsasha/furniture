@@ -10,11 +10,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $Secondary100;
+    background-color: $secondary100;
     padding: 16px;
+
     @media screen and (min-width: $tablet) {
         padding: 20px;
     }
+
     @media screen and (min-width: $laptop) {
         padding: 40px;
     }
@@ -30,15 +32,17 @@
     font-weight: 400;
     font-size: 28px;
     color: rgba(59, 48, 48, 1);
+
     @media screen and (min-width: $tablet) {
         font-size: 48px;
     }
+
     @media screen and (min-width: $laptop) {
         font-size: 62px;
     }
 }
 
 .title span {
-    background: $Secondary100;
+    background: $secondary100;
     padding: 0 10px;
 }

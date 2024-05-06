@@ -4,6 +4,7 @@
   padding-left: 0;
   padding-right: 0;
   padding-top: 70px;
+
   @media screen and (min-width: $tablet) {
     padding-top: 100px;
   }
@@ -14,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $Secondary50;
+  background-color: $secondary50;
   padding: 16px;
 }
 
@@ -28,10 +29,12 @@
   margin-right: 10px;
   width: 20px;
   height: 20px;
-  fill: $Primary900;
+  fill: $primary900;
+
   @media screen and (min-width: $tablet) {
     width: 28px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 32px;
   }
@@ -42,7 +45,7 @@
   top: 3px;
   display: flex;
   padding: 5px;
-  background-color: $Secondary50;
+  background-color: $secondary50;
 }
 
 .title {
@@ -55,10 +58,12 @@
   font-weight: 400;
   font-size: 28px;
   color: rgba(59, 48, 48, 1);
+
   @media screen and (min-width: $tablet) {
     font-size: 48px;
     margin: 25px 0 70px;
   }
+
   @media screen and (min-width: $laptop) {
     font-size: 62px;
     margin: 35px 0 75px;
@@ -66,20 +71,23 @@
 }
 
 .title span {
-  background: $Secondary50;
+  background: $secondary50;
   padding: 0 10px;
 }
 
 .innerWrap {
   display: flex;
   flex-direction: column;
+
   @media screen and (min-width: $laptop) {
     flex-direction: row-reverse;
   }
+
   @media screen and (min-width: $laptop) {
     width: 961px;
     justify-content: space-between;
   }
+
   @media screen and (min-width: $desktop) {
     width: 1200px;
   }
@@ -90,18 +98,22 @@
   width: 280px;
   height: 280px;
   margin-bottom: 12px;
+
   @media screen and (min-width: $tablet) {
     width: 656px;
     height: 224px;
   }
+
   @media screen and (min-width: $laptop) {
     width: 470px;
     height: 354px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 690px;
     height: 520px;
   }
+
   &:hover {
     cursor: pointer;
   }
@@ -114,14 +126,17 @@
 .descriptionBox {
   width: 280px;
   margin-bottom: 12px;
+
   @media screen and (min-width: $tablet) {
     width: 432px;
     height: 294px;
   }
+
   @media screen and (min-width: $laptop) {
     width: 470px;
     height: 386px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 496px;
     height: 520px;
@@ -132,8 +147,9 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
-  color: $Primary900;
+  color: $primary900;
   margin-bottom: 4px;
+
   @media screen and (min-width: $laptop) {
     font-size: 32px;
   }
@@ -143,11 +159,13 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
-  color: $Primary900;
+  color: $primary900;
+
   @media screen and (min-width: $laptop) {
     font-size: 20px;
   }
 }
+
 // .btn,
 #btn {
   display: flex;
@@ -160,8 +178,8 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
-  background-color: $Primary900;
-  color: $Gray0;
+  background-color: $primary900;
+  color: $gray0;
   margin-top: 12px;
 
   &:hover,
@@ -175,13 +193,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media screen and (min-width: $tablet) {
     width: 656px;
     height: 376px;
   }
+
   @media screen and (min-width: $laptop) {
     width: 961px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 1200px;
   }
@@ -191,12 +212,14 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
-  color: $Primary900;
+  color: $primary900;
   margin-bottom: 12px;
   text-align: center;
+
   @media screen and (min-width: $tablet) {
     font-size: 20px;
   }
+
   @media screen and (min-width: $laptop) {
     font-size: 24px;
   }

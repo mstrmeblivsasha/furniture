@@ -7,7 +7,7 @@ import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudi
 import styles from './DashboardCatalogueCreateForm.module.scss'
 
 
-const DashboardCatalogueCreateForm = () => {
+const DashboardCatalogueCreateForm = ({ mutate }) => {
     const initialValues = {
         defaultValues: {
             category: "",
@@ -34,7 +34,7 @@ const DashboardCatalogueCreateForm = () => {
                 body: JSON.stringify(data),
             });
             // автоматично обновлює строрінку при зміні кількості карточок
-            // mutate();
+            mutate();
             console.log("Information added to DB");
 
         } catch (err) {

@@ -17,10 +17,11 @@ type Props = {
         updatedAt: string
     }
     pathname: string
+    mutate: any
 }
 
 
-const DashboardEditAndDelete = ({ data, pathname }: Props) => {
+const DashboardEditAndDelete = ({ data, pathname, mutate }: Props) => {
     // cut /dashboard/ from pathname
     const slicedPathname = pathname.slice(11);
     const url = `/api/${slicedPathname}/${data.category}`;
@@ -41,7 +42,7 @@ const DashboardEditAndDelete = ({ data, pathname }: Props) => {
                 onClick={() => {
                     const arrForDeleting = createImagesArrayForDeletingFromCloudinary(data)
                     arrForDeleting.map(item => handleDeleteImgFromCloudinary(item));
-                    handleDeleteCardFromDB(url);
+                    handleDeleteCardFromDB(url, mutate);
                     console.log(`Картка ${data.title} видалена з БД, а всі ії фото - ${arrForDeleting} - з Cloudinary.`)
 
                 }}

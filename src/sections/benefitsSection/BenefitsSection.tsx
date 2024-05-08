@@ -13,7 +13,7 @@ const BenefitsSection = () => {
   return (
     <section className={styles.section}>
       <div className={`container ${styles.container}`}>
-        <h2 className={`sectionTitle ${styles.sectionTitle}`}>
+        <h2 className="sectionTitle">
           <span>Чому варто обрати мої послуги?</span>
         </h2>
         <ul className={styles.benefitsList}>

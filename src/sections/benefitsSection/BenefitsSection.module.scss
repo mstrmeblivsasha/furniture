@@ -45,7 +45,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
 
   & li {
     display: flex;
@@ -55,7 +55,6 @@
     position: relative;
     width: 280px;
     height: 280px;
-    // aspect-ratio: 1 / 1;
     box-shadow: $boxShadow;
     border: 1px solid $primary900;
     padding: 24px 12px;
@@ -76,7 +75,6 @@
     row-gap: 64px;
 
     & li {
-      // width: 320px;
       width: calc(48% - 8px);
       height: 356px;
       padding: 48px 20px 12px;

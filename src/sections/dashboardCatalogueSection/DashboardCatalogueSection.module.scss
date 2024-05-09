@@ -1,11 +1,11 @@
 @import "../../app/variables";
 
 .container {
-    width: 100%;
-    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     gap: 24px;
     padding: 20px 32px;
-    background-color: $formButtonColor;
+    background-color: $gray0;
 }
 
 .cardsList {

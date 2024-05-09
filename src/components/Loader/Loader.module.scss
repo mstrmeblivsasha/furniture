@@ -1,22 +1,20 @@
 @import "../../app/variables";
 
 .wrapper {
-    width: 100%;
-    height: calc(100vh - 70px - 241px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 70px;
 
-    @media screen and (min-width: $tablet) {
-        height: calc(100vh - 100px - 241px);
+    @media screen and (min-width: $laptop) {
+        width: 100%;
+        height: calc(100vh - 130px - 241px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
 .loader {
     width: 90px;
     height: 14px;
-    box-shadow: 0 3px 0 #fff;
+    box-shadow: 0 3px 0 $gray0;
     position: relative;
     display: grid;
     clip-path: inset(-60px 0 -5px)
@@ -25,7 +23,7 @@
 .loader:after {
     content: "";
     position: relative;
-    background: repeating-linear-gradient(90deg, #0000 0 calc(50% - 8px), #3b3030 0 calc(50% + 8px), #0000 0 100%) 0 0/calc(100%/3) 100%;
+    background: repeating-linear-gradient(90deg, #0000 0 calc(50% - 8px), $primary900 0 calc(50% + 8px), #0000 0 100%) 0 0/calc(100%/3) 100%;
     animation: l6-1 1s infinite;
 }
 

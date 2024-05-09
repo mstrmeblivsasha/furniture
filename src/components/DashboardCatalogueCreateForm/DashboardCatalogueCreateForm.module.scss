@@ -10,15 +10,14 @@
     flex-direction: column;
 
     row-gap: 20px;
-    background-color: $formBackgroundColor;
+    background-color: $gray300;
     padding: 30px 0 30px;
 }
 
 .formTitle {
     max-width: 400px;
-    color: $formTitleColor;
+    color: $gray500;
     font-size: 24px;
-    font-weight: 700;
     letter-spacing: 1.2px;
     text-align: center;
 }
@@ -31,19 +30,19 @@
 
 .formInput {
     width: 100%;
-    background-color: transparent;
     outline: none;
     border-radius: 10px;
-    border: 1px solid $borderColor;
-    background-color: $inputBackgroundColor;
+    border: 1px solid $primary300;
+    background-color: $gray50;
+
     padding: 12px 20px;
 
     &:focus+.formLabel,
     &:not(:placeholder-shown)+.formLabel {
-        transform: translateY(-110%) scale(0.9);
+        transform: translateY(-150%) scale(0.9);
         transition-duration: 250ms;
         padding-inline: 4px;
-        color: $formInputcolor;
+        color: $primary700;
     }
 }
 
@@ -51,7 +50,7 @@
     position: absolute;
     top: 10px;
     left: 16px;
-    color: $formLabelColor;
+    color: $primary700;
     pointer-events: none;
     transition-duration: 250ms;
 }
@@ -60,7 +59,7 @@
     position: absolute;
     top: -17px;
     right: 10px;
-    color: $errorColor;
+    color: $alertError;
     font-size: 14px;
 }
 
@@ -71,30 +70,32 @@
 
 .uploadBtn {
     width: 100%;
-    background-color: transparent;
     outline: none;
     border-radius: 30px;
-    border: 1px solid $borderColor;
-    background-color: $uploadBtnBackgroundColor;
+    border: 1px solid $primary300;
+    background-color: $gray500;
+    color: $gray0;
     padding: 12px 20px;
+
+    &:hover,
+    &:focus {
+        background-color: $primary700;
+    }
 }
 
 .formButton {
-    // width: 300px;
     cursor: pointer;
     border: none;
     outline: none;
     padding: 12px 62px;
-    background-color: $formButtonBackgroundColor;
+    background-color: $primary800;
     border-radius: 20px;
-    color: $formButtonColor;
-    font-weight: inherit;
+    color: $gray0;
     transition-duration: 250ms;
 
     &:hover,
     &:focus {
-        background-color: $formButtonHoverBackgroundColor;
-        color: $formButtonHoverColor;
+        background-color: $gray900;
         transition-duration: 250ms;
     }
 }

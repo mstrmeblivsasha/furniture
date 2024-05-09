@@ -5,13 +5,11 @@
     position: relative;
     width: 100%;
     padding: 8px 16px;
-    background-color: $containerBackgroundColor;
-    color: $containerColor;
+    background-color: $gray300;
     display: flex;
     flex-direction: column;
     gap: 8px;
 
-    font-family: var(--font-noto-sans);
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
@@ -27,7 +25,7 @@
 
 .category {
     font-size: 20px;
-    color: $categoryColor;
+    color: $alertError;
 }
 
 .imgWrapper {
@@ -47,11 +45,11 @@
 .deleteIcon {
     width: 22px;
     height: 24px;
-    stroke: $containerColor;
+    stroke: $gray900;
     fill: transparent;
 }
 
 .deleteIcon:hover {
     cursor: pointer;
-    stroke: $deleteIconHoverColor;
+    stroke: $alertError;
 }

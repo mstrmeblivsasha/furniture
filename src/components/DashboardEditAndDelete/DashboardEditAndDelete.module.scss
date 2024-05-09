@@ -16,18 +16,18 @@
 .editIcon {
     width: 23px;
     height: 23px;
-    stroke: $containerColor;
+    stroke: $gray900;
     fill: transparent;
 }
 
 .editIcon:hover {
-    stroke: #ffff59;
+    stroke: $alertSuccess;
 }
 
 .deleteIcon {
     width: 22px;
     height: 24px;
-    stroke: $containerColor;
+    stroke: $gray900;
     fill: transparent;
 }
 

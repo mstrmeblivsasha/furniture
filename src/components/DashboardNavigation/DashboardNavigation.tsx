@@ -18,7 +18,7 @@ type Props = {
 
 const DashboardNavigation = ({ handleLogout, session }: Props) => {
     const pathName = usePathname();
-    const isAdmin = session?.user?.email === process.env.NEXT_PUBLIC_MASTER || session?.user?.email === process.env.NEXT_PUBLIC_DESIGNER || session?.user?.email === process.env.NEXT_PUBLIC_TESTER
+    const isAdmin = session?.user?.email === process.env.NEXT_PUBLIC_MASTER || session?.user?.email === process.env.NEXT_PUBLIC_DESIGNER || session?.user?.email === process.env.NEXT_PUBLIC_DEVELOPER
 
     return (
         <>

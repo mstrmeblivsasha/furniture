@@ -10,7 +10,12 @@ const AboutSection = () => {
         </h2>
         <div className={styles.aboutWrapp}>
           <div className={styles.imgWrapp}>
-            <Image src="/images/Oleksandr.webp" fill alt="Олександр" />
+            <Image
+              src="/images/Oleksandr.webp"
+              fill
+              alt="Олександр"
+              sizes="(max-width: 767px) 100vw, (min-width: 768px) 50vw, 33vw"
+            />
           </div>
           <div className={styles.aboutDescr}>
             <p>

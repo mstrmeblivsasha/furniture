@@ -41,9 +41,6 @@
     flex-direction: row;
     gap: clamp(16px, 2.5vw, 24px);
   }
-  //   @media screen and (min-width: $laptop) {
-  //     gap: 20px;
-  //   }
 }
 
 .imgWrapp {
@@ -54,7 +51,6 @@
   margin-right: auto;
   overflow: hidden;
   box-shadow: $boxShadow;
-  //   flex: 1;
 
   @media screen and (min-width: $tablet) {
     width: 100%;

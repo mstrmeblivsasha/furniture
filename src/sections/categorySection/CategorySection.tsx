@@ -1,6 +1,6 @@
 "use client";
 
-// import Link from "next/link";
+import Link from "next/link";
 import { useState, useContext } from "react";
 import { CldImage } from "next-cloudinary";
 import { SiteContext } from "@/context/SiteContext";
@@ -16,11 +16,9 @@ const CategorySection = () => {
   const { setModalOpen } = useContext(SiteContext);
   const [open, setOpen] = useState(false);
 
-  // console.log("data", data);
   const srcArray = data?.sliderImages.map((item: string) => ({
     src: `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/v1713612219/${item}.webp`,
   }));
-  // console.log("srcArray", srcArray);
 
   return (
     <>
@@ -29,17 +27,16 @@ const CategorySection = () => {
       ) : (
         <section className={styles.section}>
           <div className={`container ${styles.container} `}>
-            <div className={styles.titleBox}>
-              {/* <Link href='/catalogue' className={styles.linkBack}>
-                                <svg className={styles.icon}>
-                                    <use href='/sprite.svg#arrow-left'></use>
-                                </svg>
-                                Назад
-                            </Link> */}
-              <h1 className={styles.title}>
-                <span>{data.title}</span>
-              </h1>
-            </div>
+            <Link href="/catalogue" className={styles.linkBack}>
+              <svg className={styles.icon}>
+                <use href="/sprite.svg#arrow-left"></use>
+              </svg>
+              Назад
+            </Link>
+            <h1 className={styles.title}>
+              <span>{data.title}</span>
+            </h1>
+
             <div className={styles.innerWrap}>
               <div className={styles.imgBox} onClick={() => setOpen(true)}>
                 <CldImage
@@ -53,14 +50,6 @@ const CategorySection = () => {
               <div className={styles.descriptionBox}>
                 <h2 className={styles.subTitle}>{data.subTitle}</h2>
                 <div className={styles.description}>{data.description}</div>
-
-                {/* <button
-                  type="button"
-                  className={styles.btn}
-                  onClick={() => setModalOpen(true)}
-                >
-                  Замовити
-                </button> */}
 
                 <OrderBtn
                   type="button"

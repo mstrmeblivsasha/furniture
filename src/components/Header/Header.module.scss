@@ -17,6 +17,14 @@
   }
 }
 
+.hidden {
+  transform: translateY(-100%);
+}
+
+.visible {
+  transform: translateY(0%);
+}
+
 .container {
   position: relative;
   align-items: center;
@@ -101,12 +109,3 @@
     padding: 0px 48px;
   }
 }
-
-// @keyframes navLink {
-//   to {
-//     background-image: linear-gradient(135deg, #5b4947, #c19b97);
-
-//     border-radius: 4px;
-//     color: $gray0;
-//   }
-// }

@@ -22,7 +22,6 @@
   background-position: 4% 0%;
   padding-top: 20px;
   padding-bottom: 118px;
-  // gap: 205px;
   @media screen and (min-width: $tablet) {
     padding-bottom: 224px;
     background-position: center;
@@ -36,7 +35,6 @@
 }
 
 .heroTitle {
-  // background-color: red;
   padding: 4px 0px;
   backdrop-filter: blur(10px);
   width: 100%;
@@ -56,12 +54,6 @@
   @media screen and (min-width: $desktop) {
     margin-top: 40px;
   }
-  // & h1 {
-  //   font-size: 32px;
-  //   color: $gray0;
-  //   font-weight: 300;
-  //   max-width: 200px;
-  // }
 }
 
 .btn {

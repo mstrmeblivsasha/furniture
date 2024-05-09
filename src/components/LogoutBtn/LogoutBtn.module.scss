@@ -5,19 +5,19 @@
         display: block;
         background-color: transparent;
         border: transparent;
-        cursor: pointer;
+        // cursor: pointer;
     }
 }
 
 .exitIcon {
     width: 28px;
     height: 28px;
-    stroke: $exitIconStrokeColor;
-    fill: $exitIconFillColor;
+    stroke: $primary700;
+    fill: $primary700;
     transition-duration: 250ms;
 }
 
 .exitIcon:hover {
-    stroke: $exitIconHoverStrokeColor;
-    fill: $exitIconHoverFillColor;
+    stroke: $alertError;
+    fill: $alertError;
 }

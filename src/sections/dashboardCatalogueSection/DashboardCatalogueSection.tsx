@@ -23,14 +23,15 @@ const DashboardCatalogueSection = () => {
 
     return (
         <>
-            {isLoading ?
-                (<Loader />)
-                : (<div className={styles.container}>
+            {isLoading
+                ? (<Loader />)
+                : (<section className={styles.container}>
                     <div className={styles.cardsList}>
                         {sortedByUpdateData.map((item, index) => { return (<DashboardCatalogueItem key={index} data={item} mutate={mutate} />) })}
                     </div>
                     <DashboardCatalogueCreateForm mutate={mutate} />
-                </div>)}
+                </section>)
+            }
         </>
     )
 }

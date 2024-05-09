@@ -13,11 +13,12 @@ const DashboardCatalogueCategorySection = () => {
         <>
             {isLoading
                 ? (<Loader />)
-                : (<div className={styles.container}>
+                : (<section className={styles.container}>
                     <DashboardCatalogueItem data={data} mutate={mutate} />
                     <DashboardCatalogueUpdateForm data={data} mutate={mutate} />
-                </div>)
-            }</>
+                </section>)
+            }
+        </>
     )
 }
 

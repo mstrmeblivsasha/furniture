@@ -13,7 +13,7 @@ export const authConfig = {
 
         authorized({ auth, request }: Props) {
 
-            const isAdmin = auth?.user.email === process.env.NEXT_PUBLIC_MASTER || auth?.user.email === process.env.NEXT_PUBLIC_DESIGNER || auth?.user.email === process.env.NEXT_PUBLIC_TESTER
+            const isAdmin = auth?.user.email === process.env.NEXT_PUBLIC_MASTER || auth?.user.email === process.env.NEXT_PUBLIC_DESIGNER || auth?.user.email === process.env.NEXT_PUBLIC_DEVELOPER
             const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/catalogue')
 
             // ONLY ADMIN CAN REACH ADMIN PAGE

@@ -162,10 +162,24 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
                             if (getValues("newImage") !== "") {
                                 const publicId = getValues("newImage");
                                 handleDeleteImgFromCloudinary(publicId);
+
+                                const sliderImgs = getValues("newSliderImages");
+                                const filteredImgs = sliderImgs.filter(item => item !== publicId);
+                                setValue("newSliderImages", filteredImgs, { shouldValidate: true });
                             }
+
                             setValue("newImage", result.info.public_id, {
                                 shouldValidate: true,
                             });
+
+                            setValue(
+                                "newSliderImages",
+                                [
+                                    result.info.public_id,
+                                    ...getValues("newSliderImages")
+                                ],
+                                { shouldValidate: true }
+                            );
                             widget.close();
                         }}
                         options={{ multiple: false }}
@@ -199,7 +213,7 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
                                 "newSliderImages",
                                 [
                                     ...getValues("newSliderImages"),
-                                    result.info.public_id,
+                                    result.info.public_id
                                 ],
                                 { shouldValidate: true }
                             );

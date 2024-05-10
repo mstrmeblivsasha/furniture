@@ -14,16 +14,14 @@ import "./CategorySlider.css";
 
 const CategorySlider = ({ images }: TypeSliderProps) => {
     const { data, isLoading, error } = GetDataWithPathname();
+    const [index, setIndex] = useState(-1);
 
-    const [open, setOpen] = useState(false);
-
-    // console.log("data", data);
     const srcArray = data?.sliderImages.map((item: string) => ({
         src: `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/v1713612219/${item}.webp`,
     }));
     return (
         <>
-            <Slider open={open} setOpen={setOpen} array={srcArray} />
+            <Slider index={index} setIndex={setIndex} array={srcArray} />
             <Swiper
                 slidesPerView={1}
                 spaceBetween={24}
@@ -52,7 +50,7 @@ const CategorySlider = ({ images }: TypeSliderProps) => {
                         <div className='slideContentWrapper'>
                             <div
                                 className='imgBox'
-                                onClick={() => setOpen(true)}
+                                onClick={() => setIndex(index)}
                             >
                                 <CldImage
                                     src={item}

@@ -11,12 +11,17 @@
 }
 
 .container {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $secondary50;
     padding: 16px;
+    padding-top: 36px;
+    @media screen and (min-width: $tablet) {
+        padding-top: 16px;
+    }
 }
 
 .titleBox {
@@ -45,7 +50,8 @@
 
 .linkBack {
     position: absolute;
-    top: -30px;
+    top: 10px;
+    left: 15px;
     display: flex;
     align-items: center;
     padding: 5px;
@@ -54,12 +60,12 @@
     font-weight: 400;
     line-height: 1.6;
     @media screen and (min-width: $tablet) {
-        top: 12px;
+        top: 27px;
         font-size: 16px;
     }
 
     @media screen and (min-width: $laptop) {
-        top: 20px;
+        top: 35px;
         font-size: 20px;
     }
 }
@@ -145,17 +151,14 @@
 
     @media screen and (min-width: $tablet) {
         width: 432px;
-        height: 294px;
     }
 
     @media screen and (min-width: $laptop) {
         width: 470px;
-        height: 386px;
     }
 
     @media screen and (min-width: $desktop) {
         width: 496px;
-        height: 520px;
     }
 }
 

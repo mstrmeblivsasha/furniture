@@ -42,6 +42,11 @@
     margin-bottom: 20px;
 }
 
+.mainImg,
+.img {
+    object-fit: cover;
+}
+
 .deleteIcon {
     width: 22px;
     height: 24px;

@@ -122,10 +122,25 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
                             if (getValues("image") !== "") {
                                 const publicId = getValues("image");
                                 handleDeleteImgFromCloudinary(publicId);
+
+                                const sliderImgs = getValues("sliderImages");
+                                const filteredImgs = sliderImgs.filter(item => item !== publicId);
+                                setValue("sliderImages", filteredImgs, { shouldValidate: true });
                             }
+
                             setValue("image", result.info.public_id, {
                                 shouldValidate: true,
                             });
+
+                            setValue(
+                                "sliderImages",
+                                [
+                                    result.info.public_id,
+                                    ...getValues("sliderImages"),
+                                ],
+                                { shouldValidate: true }
+                            );
+
                             widget.close();
                         }}
                         options={{ multiple: false }}

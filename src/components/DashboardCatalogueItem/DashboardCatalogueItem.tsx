@@ -35,6 +35,7 @@ const DashboardCatalogueItem = ({ data, mutate }: Props) => {
             <p><span className={styles.bold}>Опис:</span> {data.description}</p>
             <p className={styles.bold}>Головна картинка:</p>
             <CldImage
+                className={styles.mainImg}
                 width={420}
                 height={300}
                 src={data.image}
@@ -48,11 +49,12 @@ const DashboardCatalogueItem = ({ data, mutate }: Props) => {
                     return (
                         <div key={index} className={styles.imgWrapper}>
                             <CldImage
+                                className={styles.img}
                                 width={280}
                                 height={200}
                                 src={item}
                                 sizes='20vw'
-                                alt={`Фото з секції ${data.category}`}
+                                alt={`Фото з секції ${data.title}`}
                             />
                             {!isList && (
                                 <svg

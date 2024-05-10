@@ -9,17 +9,18 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/styles.css";
 
 type TypePropsSlider = {
-    open: boolean;
-    setOpen: Dispatch<SetStateAction<boolean>>;
+    index: number;
+    setIndex: Dispatch<SetStateAction<number>>;
     array: [];
 };
 
-const Slider = ({ open, setOpen, array }: TypePropsSlider) => {
+const Slider = ({ index, setIndex, array }: TypePropsSlider) => {
     return (
         <Lightbox
             slides={array}
-            open={open}
-            close={() => setOpen(false)}
+            index={index}
+            open={index >= 0}
+            close={() => setIndex(-1)}
             plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
         />
     );

@@ -20,9 +20,7 @@ const BenefitsSection = () => {
           {benefits.map((el: elProps) => {
             return (
               <li key={el.id} className={styles.item}>
-                <div className={styles.itemNumber}>
-                  <p>{el.id}</p>
-                </div>
+                <p className={styles.itemNumber}>{el.id}</p>
                 <h3>{el.title}</h3>
                 <p className={styles.itemText}>{el.text}</p>
               </li>

@@ -4,7 +4,7 @@ export const navlinks = [
   {
     id: v4(),
     title: "Головна",
-    href: "/",
+    href: "/#hero",
   },
   {
     id: v4(),

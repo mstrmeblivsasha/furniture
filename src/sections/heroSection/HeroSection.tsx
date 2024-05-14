@@ -8,7 +8,7 @@ import styles from "./HeroSection.module.scss";
 const HeroSection = () => {
   const { setModalOpen } = useContext(SiteContext);
   return (
-    <section id="/" className={styles.section}>
+    <section id="/hero" className={styles.section}>
       <div className={`container ${styles.container} `}>
         <h1 className={styles.heroTitle}>Меблі, які розкажуть Вашу історію</h1>
 

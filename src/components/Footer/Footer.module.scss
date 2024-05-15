@@ -30,7 +30,10 @@
     @media screen and (min-width: $tablet) {
       display: flex;
       font-size: 16px;
-      gap: 20px;
+      gap: 4px;
+      & a {
+        padding: 2px 8px;
+      }
     }
 
     @media screen and (min-width: $tablet) {

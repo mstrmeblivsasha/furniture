@@ -43,8 +43,12 @@
 }
 
 .heroTitle {
-  padding: 4px 0px;
+  padding: 4px 8px;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-box-backdrop-filter: blur(10px);
+  -o-transition-backdrop-filter: blur(10px);
+  -ms-backdrop-filter: blur(10px);
   width: 100%;
   font-size: 32px;
   color: $gray0;

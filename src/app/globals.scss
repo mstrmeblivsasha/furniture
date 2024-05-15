@@ -5,11 +5,17 @@
 *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
+
   padding: 0;
   margin: 0;
+
   -webkit-transition-duration: 250ms;
+  -moz-transition-duration: 250ms;
   -o-transition-duration: 250ms;
+  -ms-transition-duration: 250ms;
   transition-duration: 250ms;
 }
 

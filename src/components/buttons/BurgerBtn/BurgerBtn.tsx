@@ -25,9 +25,7 @@ const BurgerBtn = () => {
     return () => {
       // Видалення обробника подій при видаленні компонента
       const mainEl = document.querySelector("main");
-      // if (mainEl) {
       mainEl?.classList.remove("bluredBody");
-      // }
     };
   }, [isMobileMenu]);
 

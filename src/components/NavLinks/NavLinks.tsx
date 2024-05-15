@@ -1,9 +1,10 @@
 "use client";
 
+import { SiteContext } from "@/context/SiteContext";
 import { navlinks } from "@/data/navLinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { MouseEvent, useEffect, useState } from "react"; // імпортуємо тип MouseEvent
+import React, { MouseEvent, useContext, useEffect } from "react"; // імпортуємо тип MouseEvent
 import styles from "./NavLinks.module.scss";
 
 type navProps = {
@@ -24,8 +25,8 @@ type prevEl = {
 const NavLinks = ({ className, onClick }: navProps) => {
   const isClient = typeof window !== "undefined";
   const pathName = usePathname();
-  // isClient && console.log("window.location.hash ", window.location.hash);
-  const [hash, setHash] = useState<string>("");
+
+  const { hash, setHash } = useContext(SiteContext);
 
   useEffect(() => {
     if (
@@ -68,11 +69,7 @@ const NavLinks = ({ className, onClick }: navProps) => {
               pathName === "/" ? homeLinkClassName() : pageLinkClassName()
             }
             onClick={(event) => {
-              // Оновлюємо хеш при кліці на посилання
-              setHash((prev): any => {
-                prev === window.location.hash;
-              });
-
+              setHash(el.href.slice(1)); // Оновлюємо hash до значення href лінку
               if (onClick) {
                 onClick(event);
               }

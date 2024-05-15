@@ -14,12 +14,11 @@ type TypeDataCatalogue = {
 
 const CatalogueList = () => {
   const { data, isLoading, error } = GetDataWithPathname();
-  // console.log("dataCataloguesSection", data);
   return (
     <ul className={styles.catalogueList}>
       {!isLoading &&
         data?.map(({ title, category, image }: TypeDataCatalogue) => (
-          <li key={title} className={styles.catalogueItem}>
+          <li key={title}>
             <Link
               href={`/catalogue/${category}`}
               className={styles.catalogueLink}
@@ -35,9 +34,9 @@ const CatalogueList = () => {
                 />
               </div>
               <div className={styles.subtitleBox}>
-                <h3 className={styles.subtitle}>{title}</h3>
+                <h3>{title}</h3>
 
-                <svg className={styles.icon}>
+                <svg>
                   <use href="./sprite.svg#arrow-right"></use>
                 </svg>
               </div>

@@ -121,6 +121,14 @@ section {
     padding-right: 56px;
   }
 }
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
 
 ul,
 ol {
@@ -136,15 +144,6 @@ a {
 
 button {
   cursor: pointer;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
 }
 
 .active {

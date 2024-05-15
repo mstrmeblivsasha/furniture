@@ -78,7 +78,7 @@
     & li {
       width: calc(50% - 8px);
 
-      height: 356px;
+      height: 340px;
       padding: 48px 20px 12px;
 
       & h3 {
@@ -93,7 +93,7 @@
     & li {
       padding: 52px 36px;
       width: calc(50% - 10px);
-      height: calc(528px - 16vw);
+      height: calc(512px - 16vw);
     }
   }
 
@@ -102,7 +102,6 @@
 
     & li {
       padding: 32px 104px;
-      padding: 56px 104px 32px;
       width: calc(50% - 22px);
       height: 372px;
 
@@ -126,10 +125,10 @@
   justify-content: center;
   align-items: center;
 
-  width: clamp(48px, 8vw, 140px);
-  height: clamp(48px, 8vw, 140px);
+  width: clamp(48px, 7vw, 120px);
+  height: clamp(48px, 7vw, 120px);
 
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(40px, 5vw, 80px);
   letter-spacing: -2px;
   color: $gray0;
   font-family: var(--font-raleway);

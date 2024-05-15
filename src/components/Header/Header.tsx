@@ -81,7 +81,9 @@ const Header = () => {
         <NavLinks
           className={navlinksStyles()}
           onClick={() => {
-            setIsMobileMenu(false);
+            if (!isDesktop) {
+              setIsMobileMenu(false);
+            }
           }}
         />
       </div>

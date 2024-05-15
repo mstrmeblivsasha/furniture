@@ -1,5 +1,4 @@
 import { v4 } from "uuid";
-// console.log(v4());
 export const navlinks = [
   {
     id: v4(),

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Raleway, Noto_Serif, Inter, Manrope } from "next/font/google";
+import { Noto_Serif, Inter, Manrope } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ModalR from "@/components/Modal/Modal";
@@ -13,12 +13,6 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500"],
   variable: "--font-manrope",
 });
-
-// const raleway = Raleway({
-//   subsets: ["cyrillic"],
-//   weight: ["100", "200", "300", "400", "500"],
-//   variable: "--font-raleway",
-// });
 
 const notoSerif = Noto_Serif({
   subsets: ["cyrillic"],

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { MouseEvent, useEffect, useState } from "react"; // імпортуємо тип MouseEvent
 import styles from "./NavLinks.module.scss";
-// імпортуємо тип MouseEvent
 
 type navProps = {
   className?: string;
@@ -25,7 +24,7 @@ type prevEl = {
 const NavLinks = ({ className, onClick }: navProps) => {
   const isClient = typeof window !== "undefined";
   const pathName = usePathname();
-  isClient && console.log("window.location.hash ", window.location.hash);
+  // isClient && console.log("window.location.hash ", window.location.hash);
   const [hash, setHash] = useState<string>("");
 
   useEffect(() => {
@@ -43,7 +42,6 @@ const NavLinks = ({ className, onClick }: navProps) => {
     <nav className={`${styles.nav} ${className}`}>
       {navlinks.map((el: elProps) => {
         const homeLinkClassName: any = () => {
-          // if (isClient && window.location.hash === el.href.slice(1)) {
           if (isClient && hash === el.href.slice(1)) {
             return `${styles.link}  activeLink`;
           } else {
@@ -69,8 +67,6 @@ const NavLinks = ({ className, onClick }: navProps) => {
             className={
               pathName === "/" ? homeLinkClassName() : pageLinkClassName()
             }
-            // onClick={onClick}
-
             onClick={(event) => {
               // Оновлюємо хеш при кліці на посилання
               setHash((prev): any => {

@@ -5,6 +5,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactsSchema } from "@/zodShemas/contactsShema";
 import { TypeContactsSchema } from "@/zodShemas/contactsShema";
+import { useLockBodyScroll } from "@/utils/useLockBodyScroll";
+import { sendToTelegram } from "@/utils/sendToTelegram";
 import { SiteContext } from "@/context/SiteContext";
 import SuccessContent from "./SuccessContent";
 
@@ -33,12 +35,14 @@ const ContactForm = () => {
 
     const onSubmit: SubmitHandler<TypeContactsSchema> = (data) => {
         setSubmited(true);
-        console.log("submitData:", data);
+        sendToTelegram(data);
         setTimeout(() => {
             if (isModalOpen) closeModal();
             setSubmited(false);
         }, 3000);
     };
+
+    useLockBodyScroll(isModalOpen);
 
     return (
         <>

@@ -22,16 +22,12 @@ const Footer = () => {
             </svg>
             mstrmebliv@gmail.com
           </a>
-          <a
-            href="https://maps.app.goo.gl/7Xeig7igkrsY5pVV7"
-            target="_blank"
-            className={`${styles.contact} `}
-          >
+          <p className={`${styles.contact} `}>
             <svg>
               <use href="./sprite.svg#icon-location"></use>
             </svg>
             Новомосковськ, Дніпро
-          </a>
+          </p>
         </address>
 
         <Logo className={styles.logo} />
@@ -39,7 +35,10 @@ const Footer = () => {
         <NavLinks className={styles.footerNavLinks} />
 
         <pre className={styles.madeBy}>
-          made by <a href="https://webevery.dev/">webevery.dev</a>
+          made by{" "}
+          <a href="https://webevery.dev/" target="_blank">
+            webevery.dev
+          </a>
         </pre>
       </div>
     </footer>

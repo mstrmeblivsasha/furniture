@@ -3,9 +3,8 @@
 import { navlinks } from "@/data/navLinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react"; // імпортуємо тип MouseEvent
 import styles from "./NavLinks.module.scss";
-import { MouseEvent } from "react"; // імпортуємо тип MouseEvent
 
 type navProps = {
   className?: string;
@@ -18,44 +17,43 @@ type elProps = {
   title: string;
 };
 
+type prevEl = {
+  prev: string;
+};
+
 const NavLinks = ({ className, onClick }: navProps) => {
   const isClient = typeof window !== "undefined";
   const pathName = usePathname();
-
-  const [active, setActive] = useState<boolean>(false);
+  // isClient && console.log("window.location.hash ", window.location.hash);
+  const [hash, setHash] = useState<string>("");
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (window.location.hash === "") {
-        setActive(true);
-      } else {
-        setActive(false);
-      }
-      // window.location.hash === "" ? setActive(true) : setActive(false);
+    if (
+      isClient &&
+      (window.location.hash === "" || window.location.hash === "#hero")
+    ) {
+      setHash("#hero");
+    } else {
+      setHash(window.location.hash);
     }
-  }, []);
-  active && window.location.hash === "#hero";
-
-  const isCataloguePage: any = pathName.startsWith("/catalogue");
+  }, [isClient, setHash]);
 
   return (
     <nav className={`${styles.nav} ${className}`}>
       {navlinks.map((el: elProps) => {
-        // console.log("pathName", pathName);
-        // console.log("el.href", el.href);
-        // console.log("el.href.slice(1)", el.href.slice(1));
-        // isClient && console.log("window.location.href", window.location.href);
-        // isClient && console.log("window.location.hash", window.location.hash);
-
         const homeLinkClassName: any = () => {
-          if (isClient && el.href.slice(1) === window.location.hash) {
+          if (isClient && hash === el.href.slice(1)) {
             return `${styles.link}  activeLink`;
           } else {
             return `${styles.link} hoverLink`;
           }
         };
+
         const pageLinkClassName: any = () => {
-          if (isClient && pathName === el.href) {
+          if (
+            (isClient && pathName === el.href) ||
+            pathName.includes(el.href)
+          ) {
             return `${styles.link}  activeLink`;
           } else {
             return `${styles.link} hoverLink`;
@@ -69,10 +67,16 @@ const NavLinks = ({ className, onClick }: navProps) => {
             className={
               pathName === "/" ? homeLinkClassName() : pageLinkClassName()
             }
-            // className={
-            //   isCataloguePage ? pageLinkClassName() : homeLinkClassName()
-            // }
-            onClick={onClick}
+            onClick={(event) => {
+              // Оновлюємо хеш при кліці на посилання
+              setHash((prev): any => {
+                prev === window.location.hash;
+              });
+
+              if (onClick) {
+                onClick(event);
+              }
+            }}
           >
             {el.title}
           </Link>

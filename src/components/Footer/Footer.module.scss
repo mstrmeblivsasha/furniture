@@ -75,4 +75,7 @@
   width: 100vw;
   padding: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  @media screen and (min-width: $desktop) {
+    font-size: 16px;
+  }
 }

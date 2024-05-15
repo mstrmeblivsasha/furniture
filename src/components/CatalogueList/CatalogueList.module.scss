@@ -1,122 +1,113 @@
 @import "../../app/variables";
 
 .catalogueList {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  row-gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  & li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 280px;
+    height: 370px;
+    box-shadow: $boxShadow;
+    border: 1px solid $primary900;
+    overflow: hidden;
+  }
 
   @media screen and (min-width: $tablet) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 658px;
-    row-gap: 16px;
-    column-gap: 16px;
+    justify-content: space-between;
+    gap: 16px;
+    & li {
+      width: calc(50% - 8px);
+      height: 388px;
+    }
   }
 
   @media screen and (min-width: $laptop) {
-    width: 960px;
-    row-gap: 20px;
-    column-gap: 20px;
+    gap: 20px;
+    & li {
+      width: calc(50% - 10px);
+      height: 470px;
+    }
   }
-
   @media screen and (min-width: $desktop) {
-    width: 1200px;
-    row-gap: 24px;
-    column-gap: 24px;
+    gap: 24px;
+    & li {
+      width: calc(50% - 22px);
+      height: 588px;
+    }
   }
 }
 
-.imgBox {
-  position: relative;
-  width: 278px;
-  height: 320px;
+.catalogueLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  @media screen and (min-width: $tablet) {
-    width: 318px;
-    height: 320px;
+.imgBox {
+  width: 100%;
+  height: 320px;
+  position: relative;
+
+  & img {
+    object-fit: cover;
   }
 
   @media screen and (min-width: $laptop) {
-    width: 468px;
     height: 390px;
   }
-
   @media screen and (min-width: $desktop) {
-    width: 586px;
     height: 480px;
   }
 }
 
-.img {
-  object-fit: cover;
-}
-
-.catalogueLink {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid $gray900;
-  height: 100%;
-}
-
-.catalogueItem {
-  width: 280px;
-  height: 370px;
-
-  @media screen and (min-width: $tablet) {
-    width: 320px;
-    height: 388px;
-  }
-
-  @media screen and (min-width: $laptop) {
-    width: 470px;
-    height: 470px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    width: 588px;
-    height: 588px;
-  }
-}
-
 .subtitleBox {
+  width: 100%;
   display: flex;
   align-items: center;
-  // margin-top: 12px;
-
-  // margin: 0;
+  justify-content: center;
+  gap: 10px;
   flex: 1;
 
-  // @media screen and (min-width: $tablet) {
-  //     margin-top: 20px;
-  // }
-}
+  & h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
 
-.subtitle {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.4;
-
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: $primary900;
+  }
   @media screen and (min-width: $tablet) {
-    font-size: 20px;
+    gap: 16px;
+    & h3 {
+      font-size: 20px;
+    }
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   @media screen and (min-width: $laptop) {
-    font-size: 24px;
-  }
-}
-
-.icon {
-  margin-left: 10px;
-  width: 20px;
-  height: 20px;
-  fill: $primary900;
-
-  @media screen and (min-width: $tablet) {
-    width: 28px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    width: 32px;
+    & h3 {
+      font-size: 24px;
+    }
+    & svg {
+      width: 32px;
+      height: 24px;
+    }
   }
 }

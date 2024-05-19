@@ -12,7 +12,7 @@ export const contactsSchema = z.object({
     phone: z
         .string()
         .min(1, { message: "Заповніть це поле" })
-        .regex(regexPhone, "+380123456789"),
+        .regex(regexPhone, "+380981234567"),
     message: z
         .string()
         .trim()

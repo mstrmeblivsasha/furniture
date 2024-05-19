@@ -39,7 +39,7 @@ const ContactForm = () => {
         setTimeout(() => {
             if (isModalOpen) closeModal();
             setSubmited(false);
-        }, 3000);
+        }, 4000);
     };
 
     useLockBodyScroll(isModalOpen);
@@ -77,9 +77,10 @@ const ContactForm = () => {
                                 <input
                                     type='text'
                                     id='userName'
+                                    autoComplete="off"
                                     maxLength={40}
                                     {...register("userName")}
-                                    placeholder='Ваше Ім’я'
+                                    placeholder='Володимир'
                                     className={
                                         errors.userName
                                             ? `${styles.input} ${styles.errorColor}`
@@ -98,9 +99,10 @@ const ContactForm = () => {
                                 <input
                                     type='text'
                                     id='phone'
+                                    autoComplete="off"
                                     maxLength={13}
                                     {...register("phone")}
-                                    placeholder='+ 380_________'
+                                    placeholder='+380981234567'
                                     className={
                                         errors.phone
                                             ? `${styles.input} ${styles.errorColor}`
@@ -123,9 +125,10 @@ const ContactForm = () => {
 
                                 <textarea
                                     id='message'
+                                    autoComplete="off"
                                     maxLength={240}
                                     {...register("message")}
-                                    placeholder='Ваше замовлення'
+                                    placeholder='Я хочу проконсультуватися з Вами з приводу ...'
                                     className={
                                         errors.message
                                             ? `${styles.input} ${styles.textarea} ${styles.errorColor}`

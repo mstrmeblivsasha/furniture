@@ -18,12 +18,15 @@ const SuccessContent = () => {
                 </button>
             )}
             <div className={styles.successInnerBox}>
-                <h2 className={styles.successTitle}>
-                    Вітаю! Ваше повідомлення відправлено мені на пошту! Я
-                    передзвоню вам найближчим часом!
+                <h2 className={styles.successTitle}>Вітаю! Ваше повідомлення відправлено! Чекайте мого дзвінка найближчим часом!
                 </h2>
                 <div className={styles.imgWrap}>
-                    <Image src='/successMan.webp' fill alt='Picture of man' />
+                    <Image
+                        className={styles.image}
+                        src='/successMan.webp'
+                        alt='Picture of man'
+                        fill
+                    />
                 </div>
             </div>
             <button
@@ -39,5 +42,6 @@ const SuccessContent = () => {
         </div>
     );
 };
+
 
 export default SuccessContent;

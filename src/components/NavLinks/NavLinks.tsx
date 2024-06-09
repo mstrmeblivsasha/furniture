@@ -42,6 +42,7 @@ const NavLinks = ({ className, onClick }: navProps) => {
   return (
     <nav className={`${styles.nav} ${className}`}>
       {navlinks.map((el: elProps) => {
+
         const homeLinkClassName: any = () => {
           if (isClient && hash === el.href.slice(1)) {
             return `${styles.link}  activeLink`;
@@ -53,7 +54,7 @@ const NavLinks = ({ className, onClick }: navProps) => {
         const pageLinkClassName: any = () => {
           if (
             (isClient && pathName === el.href) ||
-            pathName.includes(el.href)
+            pathName.startsWith(el.href)
           ) {
             return `${styles.link}  activeLink`;
           } else {

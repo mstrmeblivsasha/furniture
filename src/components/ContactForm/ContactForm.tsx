@@ -80,7 +80,7 @@ const ContactForm = () => {
                                     autoComplete="off"
                                     maxLength={40}
                                     {...register("userName")}
-                                    placeholder='Володимир'
+                                    placeholder='Ваше Ім’я'
                                     className={
                                         errors.userName
                                             ? `${styles.input} ${styles.errorColor}`
@@ -102,7 +102,7 @@ const ContactForm = () => {
                                     autoComplete="off"
                                     maxLength={13}
                                     {...register("phone")}
-                                    placeholder='+380981234567'
+                                    placeholder='+ 380 - __ - ___-__-__'
                                     className={
                                         errors.phone
                                             ? `${styles.input} ${styles.errorColor}`
@@ -128,7 +128,7 @@ const ContactForm = () => {
                                     autoComplete="off"
                                     maxLength={240}
                                     {...register("message")}
-                                    placeholder='Я хочу проконсультуватися з Вами з приводу ...'
+                                    placeholder='Можна описати ваше замовлення'
                                     className={
                                         errors.message
                                             ? `${styles.input} ${styles.textarea} ${styles.errorColor}`

@@ -1,10 +1,17 @@
-import styles from './Loader.module.scss'
-const Loader = () => {
-    return (
-        <div className={styles.wrapper}>
-            <div className={styles.loader}></div>
-        </div>
-    )
-}
+import styles from "./Loader.module.scss";
 
-export default Loader
+// const Loader = (className?: string) => {
+//   return (
+//     <div className={`${className} ${styles.wrapper}`}>
+//       <div className={styles.loader}></div>
+//     </div>
+//   );
+// };
+const Loader: React.FC<{ className?: string }> = ({ className }) => {
+  return (
+    <div className={`${className} ${styles.wrapper}`}>
+      <div className={styles.loader}></div>
+    </div>
+  );
+};
+export default Loader;

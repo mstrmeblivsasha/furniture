@@ -111,3 +111,12 @@
     }
   }
 }
+
+.loaderWrapper {
+  position: absolute;
+  top: 0;
+  padding-top: 70px;
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+  }
+}

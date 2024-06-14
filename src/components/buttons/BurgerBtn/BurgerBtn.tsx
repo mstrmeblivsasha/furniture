@@ -13,10 +13,11 @@ const BurgerBtn = () => {
 
       if (isMobileMenu) {
         mainEl?.classList.add("bluredBody");
-        document.body.style.overflow = "hidden";
+        document.body.style.overflowY = "hidden";
       } else {
         mainEl?.classList.remove("bluredBody");
-        document.body.style.overflow = "auto";
+        document.body.style.overflowY = "auto";
+        document.body.style.overflowX = "hidden";
       }
     };
 

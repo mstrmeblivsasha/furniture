@@ -40,6 +40,7 @@ export default function RootLayout({
     <html lang="uk">
       <body
         className={`${manrope.variable} ${notoSerif.variable} ${inter.variable}`}
+        style={{ overflowX: "hidden", overflowY: "auto" }}
       >
         <SiteProvider>
           <Header />

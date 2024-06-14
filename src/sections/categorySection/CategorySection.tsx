@@ -10,6 +10,7 @@ import Slider from "@/components/Slider/Slider";
 
 import styles from "./CategorySection.module.scss";
 import OrderBtn from "@/components/buttons/OrderBtn/OrderBtn";
+import Loader from "@/components/Loader/Loader";
 
 const CategorySection = () => {
   const { data, isLoading, error } = GetDataWithPathname();
@@ -23,7 +24,7 @@ const CategorySection = () => {
   return (
     <>
       {isLoading ? (
-        <h2>Looding ...</h2>
+        <Loader />
       ) : (
         <section className={styles.section}>
           <div className={`container ${styles.container} `}>

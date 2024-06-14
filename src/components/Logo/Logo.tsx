@@ -1,21 +1,26 @@
-import Link from "next/link";
-import React from "react";
-import styles from "./Logo.module.scss";
-// import { Noto_Serif } from "next/font/google";
+"use client";
 
-// const notoSerif = Noto_Serif({ subsets: ["cyrillic"], weight: ["300"] });
+import { SiteContext } from "@/context/SiteContext";
+import Link from "next/link";
+import React, { useContext } from "react";
+import styles from "./Logo.module.scss";
 
 type LogoProps = {
   className?: string;
 };
 
 const Logo = ({ className }: LogoProps) => {
+  const { hash, setHash } = useContext(SiteContext);
+
   return (
     <>
-      {/* <p className={`${notoSerif.className} ${styles.logo} ${className}`}>
-        МайстерМеблів
-      </p> */}
-      <Link href="/" className={`${styles.logo} ${className}`}>
+      <Link
+        href="/"
+        className={`${styles.logo} ${className}`}
+        onClick={() => {
+          setHash("/");
+        }}
+      >
         МайстерМеблів
       </Link>
     </>

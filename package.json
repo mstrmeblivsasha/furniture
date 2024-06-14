@@ -2,6 +2,7 @@
   "name": "furniture",
   "version": "0.1.0",
   "private": true,
+  "figma": "https://www.figma.com/design/dpJu0hUhhmmiNsHJ2ujWJf/%D0%9C%D0%B0%D0%B9%D1%81%D1%82%D0%B5%D1%80%D0%9C%D0%B5%D0%B1%D0%BB%D1%96%D0%B2?node-id=0-1&t=NFzzC9Fj865agYIb-0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

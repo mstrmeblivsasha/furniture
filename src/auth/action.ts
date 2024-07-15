@@ -16,6 +16,10 @@ export const register = async (previousState: string | null, formData: Iterable<
             return { error: "User already exists" }
         }
 
+        if (password === "") {
+            return { error: "Something went wrong" }
+        }
+
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt)
 
@@ -40,12 +44,12 @@ export const login = async (previousState: string | null, formData: Iterable<rea
         await signIn("credentials", { email, password })
 
     } catch (error: any) {
-        console.log("error", error)
         // проверка на ошибку, чтобы вывести спец сообщение "Invalid username or password" с помощью useFormState в поле ошибки в loginForm
         if (error.message.includes("CredentialsSignin")) {
             return { error: "Invalid username or password" };
         }
-        // return { error: "Something went wrong" } был заменён на написанное ниже, чтобы исключить ошибку NEXT_REDIRECT при правильно введённых логине и пароле
+
+        // даже при правильно введённых логине и пароле возникает ошибк NEXT_REDIRECT. чтобы её исключить - return { error: "Something went wrong" } был заменён на написанное ниже
         throw error;
     }
 }

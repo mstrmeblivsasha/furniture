@@ -15,8 +15,9 @@ const login = async (credentials: TypeUser) => {
             throw new Error("Wrong credentials")
         }
 
-        const passwordIsCorrect = bcrypt.compare(credentials.password, user.password);
-        if (!passwordIsCorrect) {
+        const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
+
+        if (!isPasswordCorrect) {
             throw new Error("Wrong credentials")
         }
 
@@ -38,6 +39,7 @@ export const {
             CredentialsProvider({
                 async authorize(credentials) {
                     try {
+
                         // login из этого файла(т.е. из auth.js)
                         const user = await login(credentials as TypeUser);
 

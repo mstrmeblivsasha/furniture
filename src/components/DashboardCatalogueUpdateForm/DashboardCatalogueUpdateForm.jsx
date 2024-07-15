@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { CldUploadButton } from 'next-cloudinary'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -32,10 +31,10 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
     };
 
     const form = useForm(initialValues);
-    const { register, handleSubmit, formState, reset, getValues, setValue } =
+    const { register, handleSubmit, formState, getValues, setValue } =
         form;
 
-    const { errors, isSubmitSuccessful, isErrors, isSubmitting } = formState;
+    const { errors, isErrors, isSubmitting } = formState;
 
     const onSubmit = async (data) => {
         const {
@@ -71,12 +70,6 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
             console.log(err);
         }
     };
-
-    useEffect(() => {
-        if (isSubmitSuccessful) {
-            reset();
-        }
-    }, [isSubmitSuccessful, reset]);
 
 
     return (

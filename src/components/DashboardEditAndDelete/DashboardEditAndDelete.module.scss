@@ -21,7 +21,8 @@
 }
 
 .editIcon:hover {
-    stroke: $alertSuccess;
+    stroke: $alertWarning;
+    fill: $gray500;
 }
 
 .deleteIcon {
@@ -33,5 +34,6 @@
 
 .deleteIcon:hover {
     cursor: pointer;
-    stroke: #ff2828;
+    stroke: $alertError;
+    fill: $gray0;
 }

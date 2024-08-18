@@ -1,4 +1,5 @@
 'use client'
+import { toast } from 'react-toastify';
 import { CldImage } from 'next-cloudinary';
 import { usePathname } from 'next/navigation';
 import DashboardEditAndDelete from '@/components/DashboardEditAndDelete/DashboardEditAndDelete'
@@ -63,6 +64,7 @@ const DashboardCatalogueItem = ({ data, mutate }: Props) => {
                                         handleDeleteImgFromCloudinary(item);
                                         handleDeleteImageFromMongoDB(data, item, mutate);
                                         console.log(`Фото ${item} видалено з Cloudinary та БД`);
+                                        toast.success("Фото видалено з Cloudinary та БД.");
                                     }}
                                 >
                                     <use href='/sprite.svg#icon-delete' />

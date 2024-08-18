@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudinary';
 import { handleDeleteCardFromDB } from '@/utils/handleDeleteCardFromDB';
@@ -40,11 +41,12 @@ const DashboardEditAndDelete = ({ data, pathname, mutate }: Props) => {
             <svg
                 className={styles.deleteIcon}
                 onClick={() => {
-                    const arrForDeleting = createImagesArrayForDeletingFromCloudinary(data)
-                    arrForDeleting.map(item => handleDeleteImgFromCloudinary(item));
-                    handleDeleteCardFromDB(url, mutate);
-                    console.log(`Картка ${data.title} видалена з БД, а всі ії фото - ${arrForDeleting} - з Cloudinary.`)
-
+                    if (confirm("Ви впевнені, що хочете видалити цей каталог?")) {
+                        const arrForDeleting = createImagesArrayForDeletingFromCloudinary(data)
+                        arrForDeleting.map(item => handleDeleteImgFromCloudinary(item));
+                        handleDeleteCardFromDB(url, mutate);
+                        toast.success(`Каталог "${data?.category}" видалений.`);
+                    }
                 }}
             >
                 <use href="/sprite.svg#icon-delete" />

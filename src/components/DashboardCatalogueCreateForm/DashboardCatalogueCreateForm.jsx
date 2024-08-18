@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from "react-toastify";
 import { CldUploadButton } from 'next-cloudinary'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { zodCatalogueSchema } from '@/zodShemas/zodCatalogueSchema'
@@ -22,8 +23,7 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
     };
 
     const form = useForm(initialValues);
-    const { register, handleSubmit, formState, reset, getValues, setValue } =
-        form;
+    const { register, handleSubmit, formState, reset, getValues, setValue } = form;
     const { errors, isSubmitSuccessful, isSubmitting } = formState;
 
     const onSubmit = async (data) => {
@@ -35,10 +35,12 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
             });
             // автоматично обновлює строрінку при зміні кількості карточок
             mutate();
-            console.log("Information added to DB");
+            toast.success(`Каталог "${data.category}" створений.`);
 
         } catch (err) {
             console.log(err);
+            toast.error(err);
+
         }
     };
 
@@ -118,12 +120,15 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
                     <CldUploadButton
                         name={'image'}
                         className={styles.uploadBtn}
-                        onUpload={(result, widget) => {
+                        onSuccess={(result, widget) => {
                             if (getValues("image") !== "") {
                                 const publicId = getValues("image");
+                                // delete image from Cloudinary
                                 handleDeleteImgFromCloudinary(publicId);
+                                toast.success("Попереднє фото видалено з Cloudinary.");
 
                                 const sliderImgs = getValues("sliderImages");
+                                // delete name of image from array of images for slider
                                 const filteredImgs = sliderImgs.filter(item => item !== publicId);
                                 setValue("sliderImages", filteredImgs, { shouldValidate: true });
                             }
@@ -142,6 +147,7 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
                             );
 
                             widget.close();
+                            toast.success("Нове фото додано до Cloudinary.");
                         }}
                         options={{ multiple: false }}
                         uploadPreset='unsigned_preset'
@@ -169,7 +175,7 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
                     <CldUploadButton
                         name='sliderImages'
                         className={styles.uploadBtn}
-                        onUpload={(result) => {
+                        onSuccess={(result) => {
                             setValue(
                                 "sliderImages",
                                 [
@@ -178,6 +184,7 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
                                 ],
                                 { shouldValidate: true }
                             );
+                            toast.success("Нове фото додано до Cloudinary.");
                         }}
                         uploadPreset='unsigned_preset'
                     >

@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { toast } from "react-toastify";
 import { CldUploadButton } from 'next-cloudinary'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { zodCatalogueUpdateSchema } from '@/zodShemas/zodCatalogueUpdateSchema'
@@ -66,8 +67,10 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
             mutate();
 
             console.log("Information updated to DB");
+            toast.success(`Каталог "${updatedData.category}" оновлений.`);
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -151,12 +154,15 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
                     <CldUploadButton
                         name='newImage'
                         className={styles.uploadBtn}
-                        onUpload={(result, widget) => {
+                        onSuccess={(result, widget) => {
                             if (getValues("newImage") !== "") {
                                 const publicId = getValues("newImage");
+                                // delete image from Cloudinary
                                 handleDeleteImgFromCloudinary(publicId);
+                                toast.success("Попереднє фото видалено з Cloudinary.");
 
                                 const sliderImgs = getValues("newSliderImages");
+                                // delete name of image from array of images for slider
                                 const filteredImgs = sliderImgs.filter(item => item !== publicId);
                                 setValue("newSliderImages", filteredImgs, { shouldValidate: true });
                             }
@@ -174,6 +180,7 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
                                 { shouldValidate: true }
                             );
                             widget.close();
+                            toast.success("Нове фото додано до Cloudinary.");
                         }}
                         options={{ multiple: false }}
                         uploadPreset='unsigned_preset'
@@ -201,7 +208,7 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
                     <CldUploadButton
                         name='newSliderImages'
                         className={styles.uploadBtn}
-                        onUpload={(result) => {
+                        onSuccess={(result) => {
                             setValue(
                                 "newSliderImages",
                                 [
@@ -210,6 +217,7 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
                                 ],
                                 { shouldValidate: true }
                             );
+                            toast.success("Нове фото додано до Cloudinary.");
                         }}
                         uploadPreset='unsigned_preset'
                     >

@@ -7,6 +7,9 @@ import ModalR from "@/components/Modal/Modal";
 
 import "./globals.scss";
 import { SiteProvider } from "@/context/SiteContext";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/ReactToastify.css";
+
 
 const manrope = Manrope({
   subsets: ["cyrillic"],
@@ -48,6 +51,12 @@ export default function RootLayout({
           <Footer />
           <ModalR />
         </SiteProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          pauseOnHover
+          theme="colored"
+        />
       </body>
     </html>
   );

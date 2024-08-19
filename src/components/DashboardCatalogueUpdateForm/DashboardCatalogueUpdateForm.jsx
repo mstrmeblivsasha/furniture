@@ -1,22 +1,19 @@
-import { useForm } from 'react-hook-form'
+"use client";
+import { useForm } from 'react-hook-form';
 import { toast } from "react-toastify";
-import { CldUploadButton } from 'next-cloudinary'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { zodCatalogueUpdateSchema } from '@/zodShemas/zodCatalogueUpdateSchema'
-import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudinary'
-import styles from './DashboardCatalogueUpdateForm.module.scss'
+import { useRouter } from 'next/navigation';
+import { CldUploadButton } from 'next-cloudinary';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { zodCatalogueUpdateSchema } from '@/zodShemas/zodCatalogueUpdateSchema';
+import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudinary';
+import { isDeepEqual } from '@/utils/isDeepEqual';
+import styles from './DashboardCatalogueUpdateForm.module.scss';
 
 
 const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
-    const {
-        category,
-        title,
-        subTitle,
-        description,
-        image,
-        sliderTitle,
-        sliderImages,
-    } = data;
+    const { category, title, subTitle, description, image, sliderTitle, sliderImages } = data;
+
+    const receivedData = { category, title, subTitle, description, image, sliderTitle, sliderImages }
 
     const initialValues = {
         defaultValues: {
@@ -36,6 +33,8 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
         form;
 
     const { errors, isErrors, isSubmitting } = formState;
+
+    const router = useRouter();
 
     const onSubmit = async (data) => {
         const {
@@ -58,16 +57,25 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
             sliderImages: newSliderImages,
         };
 
+        const trimedCategory = updatedData.category.trim();
+        updatedData.category = trimedCategory;
+
+        if (isDeepEqual(receivedData, updatedData)) {
+            toast.warn(`Ви не внесли змін в каталог "${category}".`);
+            return;
+        }
+
         try {
             await fetch(`/api/catalogue/${category}`, {
                 method: "PATCH",
                 body: JSON.stringify(updatedData),
             });
-            // автоматично обновлює строрінку при зміні кількості карточок
-            mutate();
 
-            console.log("Information updated to DB");
+            // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
+            (category !== updatedData.category) ? router.push(`/dashboard/catalogue/${updatedData.category}`) : mutate();
+
             toast.success(`Каталог "${updatedData.category}" оновлений.`);
+
         } catch (err) {
             console.log(err);
             toast.error(err);

@@ -41,7 +41,6 @@ export const handleDeleteImgFromCloudinary = async (publicId: string) => {
             }),
         });
 
-        console.log(`Picture ${publicId} was deleted from Сloudinary`);
     } catch (error) {
         console.error("error", error);
     }

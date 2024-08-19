@@ -63,7 +63,6 @@ const DashboardCatalogueItem = ({ data, mutate }: Props) => {
                                     onClick={async () => {
                                         handleDeleteImgFromCloudinary(item);
                                         handleDeleteImageFromMongoDB(data, item, mutate);
-                                        console.log(`Фото ${item} видалено з Cloudinary та БД`);
                                         toast.success("Фото видалено з Cloudinary та БД.");
                                     }}
                                 >

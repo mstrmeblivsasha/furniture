@@ -27,6 +27,9 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
     const { errors, isSubmitSuccessful, isSubmitting } = formState;
 
     const onSubmit = async (data) => {
+        const trimedCategory = data.category.trim();
+        data.category = trimedCategory;
+
 
         try {
             await fetch("/api/catalogue", {
@@ -35,12 +38,12 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
             });
             // автоматично обновлює строрінку при зміні кількості карточок
             mutate();
+
             toast.success(`Каталог "${data.category}" створений.`);
 
         } catch (err) {
             console.log(err);
             toast.error(err);
-
         }
     };
 

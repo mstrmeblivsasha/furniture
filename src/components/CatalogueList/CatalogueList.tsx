@@ -42,7 +42,7 @@ const CatalogueList = () => {
                     <h3>{title}</h3>
 
                     <svg>
-                      <use href="./sprite.svg#arrow-right"></use>
+                      <use href="/sprite.svg#arrow-right"></use>
                     </svg>
                   </div>
                 </Link>

@@ -13,8 +13,9 @@ type TypeDataCatalogue = {
 };
 
 const CatalogueListHome = () => {
-  const { data, isLoading, error } = GetDataWithPathname();
-  // console.log("dataCataloguesListHome", data);
+  const { data, isLoading } = GetDataWithPathname();
+
+
   return (
     <ul className={styles.catalogueList}>
       {!isLoading &&
@@ -46,7 +47,7 @@ const CatalogueListHome = () => {
                   <h3 className={styles.subtitle}>{title}</h3>
 
                   <svg className={styles.icon}>
-                    <use href="./sprite.svg#arrow-right"></use>
+                    <use href="/sprite.svg#arrow-right"></use>
                   </svg>
                 </div>
               </Link>

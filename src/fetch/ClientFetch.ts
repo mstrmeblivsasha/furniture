@@ -13,8 +13,6 @@ export const GetDataWithPathname = () => {
     if (pathname === "/") {
         changedPathname = "/catalogue";
     }
-    // console.log("pathname", pathname);
-    // console.log("changedPathname", changedPathname);
 
     const fetcher = (...args: string[]) =>
         fetch(...(args as Parameters<typeof fetch>)).then((res) => res.json());

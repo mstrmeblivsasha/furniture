@@ -9,7 +9,7 @@ const Footer = () => {
         <address className={styles.contactsWrapp}>
           <a href="tel:+380973988008" className={`${styles.contact} `}>
             <svg>
-              <use href="./sprite.svg#icon-phonemini"></use>
+              <use href="/sprite.svg#icon-phonemini"></use>
             </svg>
             +380-97-398-80-08
           </a>
@@ -18,13 +18,13 @@ const Footer = () => {
             className={`${styles.contact} `}
           >
             <svg>
-              <use href="./sprite.svg#icon-mail"></use>
+              <use href="/sprite.svg#icon-mail"></use>
             </svg>
             mstrmebliv@gmail.com
           </a>
           <p className={`${styles.contact} `}>
             <svg>
-              <use href="./sprite.svg#icon-location"></use>
+              <use href="/sprite.svg#icon-location"></use>
             </svg>
             Новомосковськ, Дніпро
           </p>

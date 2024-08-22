@@ -20,6 +20,8 @@ const DashboardCatalogueSection = () => {
         });
     }
 
+    const categoriesArr = data?.map((item: TypeCatalogueFromDB) => item.category);
+
 
     return (
         <>
@@ -29,7 +31,7 @@ const DashboardCatalogueSection = () => {
                     <div className={styles.cardsList}>
                         {sortedByUpdateData.map((item, index) => { return (<DashboardCatalogueItem key={index} data={item} mutate={mutate} />) })}
                     </div>
-                    <DashboardCatalogueCreateForm mutate={mutate} />
+                    <DashboardCatalogueCreateForm mutate={mutate} categoriesArr={categoriesArr} />
                 </section>)
             }
         </>

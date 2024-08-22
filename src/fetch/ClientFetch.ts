@@ -11,11 +11,20 @@ export const GetDataWithPathname = () => {
         changedPathname = pathname.slice(11);
     }
     if (pathname === "/") {
-        changedPathname = "/catalogue";
+        changedPathname = "catalogue";
     }
 
     const fetcher = (...args: string[]) =>
         fetch(...(args as Parameters<typeof fetch>)).then((res) => res.json());
 
     return useSWR(`/api/${changedPathname}`, fetcher);
+};
+
+
+export const GetDataByCollection = (collection: string) => {
+
+    const fetcher = (...args: string[]) =>
+        fetch(...(args as Parameters<typeof fetch>)).then((res) => res.json());
+
+    return useSWR(`/api/${collection}`, fetcher);
 };

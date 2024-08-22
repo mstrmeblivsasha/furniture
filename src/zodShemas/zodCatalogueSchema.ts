@@ -1,11 +1,21 @@
 import { z } from "zod";
 
 
-export const zodCatalogueSchema = z.object({
+export const zodCatalogueSchema = (categoriesArr: string[]) => z.object({
     category: z
         .string()
         .trim()
-        .min(1, { message: "Заповніть це поле" }),
+        .min(1, { message: "Заповніть це поле" })
+        .superRefine((val, ctx) => {
+            if (categoriesArr.includes(val)) {
+                ctx.addIssue({
+                    code: z.ZodIssueCode.custom,
+                    message: "Така категорія вже існує",
+                    fatal: true,
+                });
+                return z.NEVER;
+            }
+        }),
     title: z
         .string()
         .trim()

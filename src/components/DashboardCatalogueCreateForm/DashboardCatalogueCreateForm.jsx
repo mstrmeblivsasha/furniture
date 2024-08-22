@@ -8,7 +8,7 @@ import { handleDeleteImgFromCloudinary } from '@/utils/handleDeleteImgFromCloudi
 import styles from './DashboardCatalogueCreateForm.module.scss'
 
 
-const DashboardCatalogueCreateForm = ({ mutate }) => {
+const DashboardCatalogueCreateForm = ({ mutate, categoriesArr }) => {
     const initialValues = {
         defaultValues: {
             category: "",
@@ -19,7 +19,8 @@ const DashboardCatalogueCreateForm = ({ mutate }) => {
             sliderTitle: "",
             sliderImages: [],
         },
-        resolver: zodResolver(zodCatalogueSchema),
+        resolver: zodResolver(zodCatalogueSchema(categoriesArr)),
+        mode: "onBlur",
     };
 
     const form = useForm(initialValues);

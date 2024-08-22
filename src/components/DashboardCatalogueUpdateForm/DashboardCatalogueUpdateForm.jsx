@@ -10,7 +10,7 @@ import { isDeepEqual } from '@/utils/isDeepEqual';
 import styles from './DashboardCatalogueUpdateForm.module.scss';
 
 
-const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
+const DashboardCatalogueUpdateForm = ({ data, mutate, filteredCategoriesArr }) => {
     const { category, title, subTitle, description, image, sliderTitle, sliderImages } = data;
 
     const receivedData = { category, title, subTitle, description, image, sliderTitle, sliderImages }
@@ -25,7 +25,7 @@ const DashboardCatalogueUpdateForm = ({ data, mutate }) => {
             newSliderTitle: sliderTitle,
             newSliderImages: sliderImages,
         },
-        resolver: zodResolver(zodCatalogueUpdateSchema),
+        resolver: zodResolver(zodCatalogueUpdateSchema(filteredCategoriesArr)),
     };
 
     const form = useForm(initialValues);
